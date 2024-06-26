@@ -391,6 +391,13 @@
         });
       }
       
+      var dashboardContainer = document.getElementById("dashboardContainer");
+      if (dashboardContainer) {
+        dashboardContainer.addEventListener("click", function (e) {
+          window.location.href = "./index.html";
+        });
+      }
+      
       var settingsContainer = document.getElementById("settingsContainer");
       if (settingsContainer) {
         settingsContainer.addEventListener("click", function (e) {
