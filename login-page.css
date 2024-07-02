@@ -2,7 +2,7 @@
 .grad-item {
   position: absolute;
   top: 738px;
-  left: 762px;
+  left: 675px;
   filter: blur(400px);
   border-radius: 50%;
   background-color: #a39bff;
@@ -11,149 +11,37 @@
 }
 .grad-item {
   top: 0;
-  left: 87px;
+  left: 0;
   background-color: #5647ff;
   width: 1045px;
 }
-.grad,
-.rectangle {
+.grad {
   position: absolute;
-  left: 0;
+  top: -104px;
+  left: 87px;
+  width: 1870px;
+  height: 1389px;
 }
-.rectangle {
-  top: 104px;
+.login-page-child {
+  position: absolute;
+  top: 0;
+  left: 0;
   background-color: var(--color-darkslateblue-200);
   width: 1728px;
   height: 1117px;
 }
-.grad {
-  top: -104px;
-  width: 1957px;
-  height: 1389px;
-}
-.connect-with-google-child {
+.logo-icon {
   position: absolute;
-  top: 0;
-  left: 0;
-  border-radius: var(--br-31xl);
-  width: 319px;
-  height: 31.6px;
-}
-.connect-with-adnu {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 63.6px);
-  font-size: var(--font-size-xs);
-  display: inline-block;
-  font-family: var(--font-lato);
-  color: #fafafa;
-  text-align: left;
-  width: 148.4px;
-  height: 13.8px;
-}
-.image-4-icon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 15.1px;
-  height: 14.8px;
+  top: 271px;
+  left: calc(50% + 381px);
+  width: 230px;
+  height: 227px;
   object-fit: cover;
 }
-.connect-with-adnu-gbox-parent {
-  position: absolute;
-  top: 7.9px;
-  left: calc(50% - 84.8px);
-  width: 169.6px;
-  height: 14.8px;
-}
-.connect-with-google {
-  position: absolute;
-  top: 88px;
-  left: 0;
-  width: 319px;
-  height: 31.6px;
-  cursor: pointer;
-}
-.or1 {
-  position: absolute;
-  top: 0;
-  left: calc(50% - 14.3px);
-  font-size: var(--font-size-mini);
-  display: inline-block;
-  font-family: var(--font-lato);
-  color: var(--neutral-white);
-  text-align: right;
-  width: 26.9px;
-  height: 9.9px;
-}
-.or-child {
-  top: 4.9px;
-  left: 0;
-  border-top: 1px solid var(--neutral-white);
-  box-sizing: border-box;
-  width: 67.4px;
-  height: 1px;
-}
-.or,
-.or-child,
-.or-item {
-  position: absolute;
-}
-.or-item {
-  top: 4.9px;
-  left: 127.4px;
-  border-top: 1px solid var(--neutral-white);
-  box-sizing: border-box;
-  width: 67.4px;
-  height: 1px;
-}
-.or {
-  top: 47px;
-  left: calc(50% - 103px);
-  width: 193.8px;
-  height: 9.9px;
-}
-.sign-in-with-student-id-child {
+.group-child45 {
   position: absolute;
   top: 0;
   left: 0;
-  border-radius: var(--br-31xl);
-  width: 319px;
-  height: 32.6px;
-}
-.login {
-  position: absolute;
-  top: 9px;
-  left: calc(50% - 20.5px);
-  font-size: var(--font-size-xs);
-  display: inline-block;
-  font-family: var(--font-lato);
-  color: var(--neutral-white);
-  text-align: left;
-  width: 54px;
-  height: 14px;
-}
-.sign-in-with-student-id {
-  cursor: pointer;
-  border: 0;
-  padding: 0;
-  background-color: transparent;
-  position: absolute;
-  top: 0;
-  left: 1px;
-  width: 319px;
-  height: 32.6px;
-}
-.group-child44,
-.login-button {
-  position: absolute;
-  top: 454px;
-  left: 0;
-  width: 320px;
-  height: 119.6px;
-}
-.group-child44 {
-  top: 0;
   border-radius: var(--br-31xl);
   background-color: var(--color-whitesmoke-200);
   width: 319px;
@@ -226,7 +114,7 @@
   font-size: var(--font-size-xs);
   text-decoration: underline;
   font-family: var(--font-lato);
-  color: #5c77ff;
+  color: var(--color-royalblue-100);
   text-align: right;
   display: inline-block;
   width: 90.9px;
@@ -234,27 +122,125 @@
 }
 .forms {
   position: absolute;
-  top: 303.2px;
-  left: 0;
+  top: 574.2px;
+  left: 1200px;
   width: 319px;
   height: 102.7px;
 }
-.logo-icon {
+.sign-in-with-student-id-child {
   position: absolute;
   top: 0;
-  left: calc(50% - 115px);
-  width: 230px;
-  height: 227px;
+  left: 0;
+  border-radius: var(--br-31xl);
+  width: 319px;
+  height: 32.6px;
+}
+.login {
+  position: absolute;
+  top: 9px;
+  left: calc(50% - 20.5px);
+  font-size: var(--font-size-xs);
+  display: inline-block;
+  font-family: var(--font-lato);
+  color: var(--neutral-white);
+  text-align: left;
+  width: 54px;
+  height: 14px;
+}
+.sign-in-with-student-id {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  background-color: transparent;
+  position: absolute;
+  top: 725px;
+  left: 1201px;
+  width: 319px;
+  height: 32.6px;
+}
+.or1 {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 14.3px);
+  font-size: var(--font-size-mini);
+  display: inline-block;
+  font-family: var(--font-lato);
+  color: var(--neutral-white);
+  text-align: right;
+  width: 26.9px;
+  height: 9.9px;
+}
+.or-child {
+  top: 4.4px;
+  left: -0.5px;
+  border-top: 1px solid var(--neutral-white);
+  box-sizing: border-box;
+  width: 67.4px;
+  height: 1px;
+}
+.or,
+.or-child,
+.or-item {
+  position: absolute;
+}
+.or-item {
+  top: 4.4px;
+  left: 126.9px;
+  border-top: 1px solid var(--neutral-white);
+  box-sizing: border-box;
+  width: 67.4px;
+  height: 1px;
+}
+.or {
+  top: 772px;
+  left: calc(50% + 393px);
+  width: 193.8px;
+  height: 9.9px;
+}
+.connect-with-google-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-31xl);
+  width: 319px;
+  height: 31.6px;
+}
+.connect-with-adnu {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 63.6px);
+  font-size: var(--font-size-xs);
+  display: inline-block;
+  font-family: var(--font-lato);
+  color: #fafafa;
+  text-align: left;
+  width: 148.4px;
+  height: 13.8px;
+}
+.image-4-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15.1px;
+  height: 14.8px;
   object-fit: cover;
 }
-.login-button-parent {
+.connect-with-adnu-gbox-parent {
   position: absolute;
-  top: 271px;
-  left: 1200px;
-  width: 320px;
-  height: 573.6px;
+  top: 7.9px;
+  left: calc(50% - 84.8px);
+  width: 169.6px;
+  height: 14.8px;
 }
-.login-page-child {
+.connect-with-google {
+  position: absolute;
+  top: 813px;
+  left: 1200px;
+  width: 319px;
+  height: 31.6px;
+  cursor: pointer;
+}
+.login-page-item {
   position: absolute;
   top: -1088px;
   left: 238.9px;
@@ -264,7 +250,7 @@
   transform: rotate(33deg);
   transform-origin: 0 0;
 }
-.login-icon {
+.logo-shapes-51 {
   position: absolute;
   height: 24.62%;
   width: 39.8%;
@@ -285,5 +271,5 @@
   width: 100%;
   position: relative;
   height: 1117px;
-  overflow: hidden;
+  overflow: auto;
 }
