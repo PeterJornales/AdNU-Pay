@@ -1,0 +1,82 @@
+.frame-icon {
+  position: absolute;
+  top: 749px;
+  left: 0;
+  width: 2394px;
+  height: 1389px;
+  overflow: hidden;
+}
+.frame-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: var(--neutral-white);
+  width: 2165px;
+  height: 2096px;
+}
+.frame-icon1 {
+  width: 1340.5px;
+  position: relative;
+  height: 167.3px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.span {
+  white-space: pre-wrap;
+}
+.span,
+.span1 {
+  color: var(--neutral-white);
+}
+.pay {
+  color: var(--color-dodgerblue);
+}
+.ad-u-pay-container {
+  width: 660px;
+  position: relative;
+  display: inline-block;
+  height: 159px;
+  flex-shrink: 0;
+}
+.frame1 {
+  align-self: stretch;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: -141px;
+}
+.frame,
+.logo {
+  position: absolute;
+  overflow: hidden;
+}
+.logo {
+  top: 1069px;
+  left: 0;
+  width: 1687px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.frame {
+  top: -603px;
+  left: -437px;
+  width: 2394px;
+  height: 2138px;
+}
+.login1 {
+  width: 100%;
+  position: relative;
+  background: linear-gradient(#273992, #273992), #25408f;
+  height: 1117px;
+  overflow: hidden;
+  cursor: pointer;
+  text-align: left;
+  font-size: 100px;
+  color: var(--color-darkslateblue-200);
+  font-family: var(--font-poppins);
+}
