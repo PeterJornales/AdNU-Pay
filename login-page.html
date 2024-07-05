@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./login-page.css" />
     <link
@@ -22,59 +21,203 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
     />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: var(--color-darkslateblue-100);
+      }
+
+      .login-page {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 400px;
+        background-color: var(--color-darkslateblue-200);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .logo-icon {
+        width: 230px;
+        height: 227px;
+        object-fit: cover;
+        margin-bottom: 20px;
+      }
+
+      .forms {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .rectangle-parent8,
+      .rectangle-parent9 {
+        display: flex;
+        align-items: center;
+        position: relative;
+        width: 100%;
+        background-color: var(--color-whitesmoke-200);
+        border-radius: var(--br-31xl);
+        margin-bottom: 10px;
+        padding: 5px 10px;
+      }
+
+      .student-id2,
+      .sais-pin {
+        flex: 1;
+        font-size: var(--font-size-xs);
+        font-family: var(--font-lato);
+        color: var(--color-darkgray-100);
+        text-align: left;
+      }
+
+      .user-icon,
+      .lock-alt-icon,
+      .view-icon {
+        width: 13.1px;
+        height: 12.8px;
+        margin-right: 10px;
+      }
+
+      .input-field {
+        flex: 2;
+        border: none;
+        outline: none;
+        background: none;
+        font-size: var(--font-size-xs);
+        font-family: var(--font-lato);
+        color: var(--color-darkgray-100);
+      }
+
+      .input-field::placeholder {
+        color: var(--color-darkgray-100);
+      }
+
+      .need-assistance {
+        font-size: var(--font-size-xs);
+        text-decoration: underline;
+        font-family: var(--font-lato);
+        color: var(--color-royalblue-100);
+        text-align: right;
+        cursor: pointer;
+      }
+
+      .sign-in-with-student-id {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: var(--color-darkslateblue-200);
+        border: none;
+        border-radius: var(--br-31xl);
+        padding: 10px 0;
+        cursor: pointer;
+      }
+
+      .sign-in-with-student-id img {
+        display: none;
+      }
+
+      .login {
+        font-size: var(--font-size-xs);
+        font-family: var(--font-lato);
+        color: var(--neutral-white);
+      }
+
+      .or {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        margin: 20px 0;
+      }
+
+      .or1 {
+        font-size: var(--font-size-mini);
+        font-family: var(--font-lato);
+        color: var(--neutral-white);
+        margin: 0 10px;
+      }
+
+      .or-child,
+      .or-item {
+        flex: 1;
+        height: 1px;
+        background-color: var(--neutral-white);
+      }
+
+      .connect-with-google {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        background-color: var(--color-darkslateblue-200);
+        border: none;
+        border-radius: var(--br-31xl);
+        padding: 10px 0;
+        cursor: pointer;
+      }
+
+      .connect-with-google img {
+        display: none;
+      }
+
+      .connect-with-adnu-gbox-parent {
+        display: flex;
+        align-items: center;
+      }
+
+      .connect-with-adnu {
+        font-size: var(--font-size-xs);
+        font-family: var(--font-lato);
+        color: #fafafa;
+        margin-right: 10px;
+      }
+
+      .image-4-icon {
+        width: 15.1px;
+        height: 14.8px;
+        object-fit: cover;
+      }
+    </style>
   </head>
   <body>
-    <button class="login-page">
-      <main class="grad">
-        <div class="grad-child"></div>
-        <div class="grad-item"></div>
-      </main>
-      <div class="login-page-child"></div>
+    <div class="login-page">
       <img class="logo-icon" alt="" src="./public/logo@2x.png" />
-
       <div class="forms">
         <div class="rectangle-parent8">
-          <div class="group-child45"></div>
-          <div class="student-id2">Student ID</div>
           <img class="user-icon" alt="" src="./public/user.svg" />
+          <div class="student-id2">Student ID</div>
           <input type="text" class="input-field" placeholder="Enter Student ID">
         </div>
         <div class="rectangle-parent9">
-          <div class="group-child45"></div>
-          <div class="sais-pin">SAIS PIN</div>
           <img class="lock-alt-icon" alt="" src="./public/lock-alt.svg" />
+          <div class="sais-pin">SAIS PIN</div>
           <input type="password" class="input-field" placeholder="Enter SAIS PIN">
           <img class="view-icon" alt="" src="./public/view.svg" />
         </div>
         <div class="need-assistance">Need assistance?</div>
       </div>
       <button class="sign-in-with-student-id" id="signInWithStudentID">
-        <img
-          class="sign-in-with-student-id-child"
-          alt=""
-          src="./public/rectangle-45.svg"
-        />
         <b class="login">LOGIN</b>
       </button>
       <div class="or">
-        <b class="or1">OR</b>
         <div class="or-child"></div>
+        <b class="or1">OR</b>
         <div class="or-item"></div>
       </div>
       <div class="connect-with-google" id="connectWithGoogle">
-        <img
-          class="connect-with-google-child"
-          alt=""
-          src="./public/rectangle-451.svg"
-        />
         <div class="connect-with-adnu-gbox-parent">
           <b class="connect-with-adnu">Connect with ADNU GBOX</b>
           <img class="image-4-icon" alt="" src="./public/image-4@2x.png" />
         </div>
       </div>
-      <div class="login-page-item"></div>
-      <img class="logo-shapes-51" alt="" src="./public/logo-shapes-51@2x.png" />
-    </button>
+    </div>
 
     <script>
       var signInWithStudentID = document.getElementById("signInWithStudentID");
