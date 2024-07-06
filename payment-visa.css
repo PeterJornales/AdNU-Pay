@@ -119,15 +119,15 @@
   bottom: 39.22%;
   left: 90.18%;
 }
-.form-city-child {
+.expiry {
   position: absolute;
   top: 0;
   left: calc(50% - 242.25px);
   border-radius: var(--br-8xs);
-  border: 1px solid var(--color-darkgray-200);
   box-sizing: border-box;
   width: 484.5px;
   height: 95.1px;
+  font-size: 30px;
 }
 .expiry-date {
   top: calc(50% - 18.35px);
@@ -172,9 +172,9 @@
   top: 0;
   left: calc(50% - 500.7px);
   border-radius: var(--br-8xs);
-  border: 1px solid var(--color-darkgray-200);
   box-sizing: border-box;
   width: 1001.4px;
+  font-size: 30px; /* Adjust the font size as needed */
 }
 .card-number {
   position: absolute;
@@ -214,8 +214,6 @@
   position: absolute;
   top: 21px;
   left: 79.8px;
-  font-size: var(--font-size-11xl);
-  font-family: var(--font-poppins);
   color: var(--color-gray-200);
   display: flex;
   align-items: center;
@@ -512,4 +510,16 @@
   font-size: var(--font-size-13xl);
   color: var(--color-whitesmoke-100);
   font-family: var(--text-regular-2);
+}
+
+/* Remove the line above the cardholder input */
+.form-billingaddress-child {
+  border-top: none; /* Remove the top border */
+}
+
+/* Hide the spin button for number inputs */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
