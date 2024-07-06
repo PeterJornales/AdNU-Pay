@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-
+    <title>Toggle Switch Example</title>
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./settings.css" />
     <link
@@ -22,12 +22,61 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
     />
+    <style>
+      .toggle1 {
+  width: 54px;
+  position: relative;
+  height: 26px;
+  cursor: pointer;
+  background-color: #ccc; /* Default Background */
+  border-radius: 26px;
+  transition: background-color 0.3s;
+}
+
+/* Toggle Circle */
+.toggle-child {
+  position: absolute;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  background-color: var(--primary-1);
+  transition: left 0.3s;
+  left: 0; /* Default Position */
+}
+
+/* Inner Circle */
+.elevation-3 {
+  position: absolute;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--neutral-white);
+  box-shadow: var(--shadow-3);
+  transition: left 0.3s;
+  left: 4px; /* Default Position */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Active State Styles */
+.toggle.active .toggle-child {
+  left: 26px; /* Moved Position */
+}
+
+.toggle.active .elevation-3 {
+  left: 30px; /* Moved Position */
+}
+
+.toggle.active .toggle1 {
+  background-color: var(--primary-1); /* Active Background */
+}
+
+    </style>
   </head>
   <body>
     <div class="settings6">
       <div class="account-setting">
         <img class="grad-icon2" alt="" src="./public/grad.svg" />
-
         <div class="container-wrapper">
           <div class="container1">
             <div class="container-item"></div>
@@ -40,16 +89,14 @@
             src="./public/logoutlogo.svg"
             id="logoutLogo"
           />
-
           <div class="vector-parent" id="groupContainer">
             <img class="rectangle-icon" alt="" src="./public/back-button.svg" />
-
             <div class="logout">Logout</div>
           </div>
         </div>
         <div class="account">
           <div class="auto-update">
-            <div class="toggle">
+            <div class="toggle" id="toggle1">
               <div class="option">Option</div>
               <div class="toggle1">
                 <div class="toggle-child"></div>
@@ -59,7 +106,7 @@
             <div class="auto-update1">Auto Update</div>
           </div>
           <div class="notifications">
-            <div class="toggle2">
+            <div class="toggle" id="toggle2">
               <div class="option">Option</div>
               <div class="toggle1">
                 <div class="toggle-child"></div>
@@ -72,7 +119,6 @@
           <div class="change-account-pin4">
             <div class="button">
               <img class="icons" alt="" src="./public/icons.svg" />
-
               <div class="button1">Button</div>
               <img
                 class="icons1"
@@ -83,7 +129,6 @@
             </div>
             <div class="button2">
               <img class="icons" alt="" src="./public/icons2.svg" />
-
               <div class="button1">Button</div>
               <img
                 class="icons1"
@@ -150,8 +195,17 @@
         />
       </div>
     </div>
-
     <script>
+      function setupToggle(toggleId) {
+        var toggle = document.getElementById(toggleId);
+        toggle.addEventListener('click', function () {
+          this.classList.toggle('active');
+        });
+      }
+
+      setupToggle('toggle1');
+      setupToggle('toggle2');
+
       var logoutLogo = document.getElementById("logoutLogo");
       if (logoutLogo) {
         logoutLogo.addEventListener("click", function (e) {
