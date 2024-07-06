@@ -22,6 +22,14 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
     />
+    <style>
+      .group-child19.error {
+        background-color: red;
+      }
+      .confirm4.error {
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <div class="payment-gcash">
@@ -40,14 +48,14 @@
       </div>
       <div class="container-contact2">
         <img class="box-icon" alt="" src="./public/box.svg" />
-
         <div class="form-city2">
           <div class="form-city-inner"></div>
           <div class="form-city-inner">
             <input
               type="text"
               class="form-city-inner"
-              placeholder="Authetication Code"
+              placeholder="Authentication Code"
+              id="authCode"
             />
           </div>
         </div>
@@ -58,16 +66,7 @@
               type="text"
               class="form-billingaddress-child2"
               placeholder="Mobile Number"
-            />
-          </div>
-        </div>
-        <div class="form-billingaddress5">
-          <div class="form-billingaddress-child3"></div>
-          <div class="form-billingaddress-child3">
-            <input
-              type="text"
-              class="form-billingaddress-child3"
-              placeholder="Linked Bank Account or Card"
+              id="mobileNumber"
             />
           </div>
         </div>
@@ -78,7 +77,6 @@
             alt=""
             src="./public/rectangle-40481.svg"
           />
-
           <div class="confirm4">CONFIRM</div>
         </div>
       </div>
@@ -90,14 +88,12 @@
             alt=""
             src="./public/rectangle-4028@2x.png"
           />
-
           <img
             class="payment-method-child5"
             alt=""
             src="./public/rectangle-4027@2x.png"
             id="rectangleImage1"
           />
-
           <img
             class="payment-method-child6"
             alt=""
@@ -108,7 +104,6 @@
         <div class="card-type2">Card Type</div>
       </div>
       <img class="button-icon2" alt="" src="./public/button@2x.png" />
-
       <div class="sidebar5">
         <div class="background5"></div>
         <div class="adnupay-ver01beta5">AdNUPay ver0.1beta</div>
@@ -142,7 +137,6 @@
         />
       </div>
     </div>
-
     <script>
       var profileIcon = document.getElementById("profileIcon");
       if (profileIcon) {
@@ -154,7 +148,24 @@
       var groupContainer = document.getElementById("groupContainer");
       if (groupContainer) {
         groupContainer.addEventListener("click", function (e) {
-          window.location.href = "./reciept.html";
+          var authCode = document.getElementById("authCode").value;
+          var mobileNumber = document.getElementById("mobileNumber").value;
+          if (authCode === "" || mobileNumber === "") {
+            var groupChild19 = document.querySelector(".group-child19");
+            var confirmText = document.querySelector(".confirm4");
+            groupChild19.classList.add("error");
+            confirmText.classList.add("error");
+            confirmText.innerText = "CONFIRM";
+            setTimeout(function () {
+              groupChild19.classList.remove("error");
+              confirmText.classList.remove("error");
+              confirmText.innerText = "CONFIRM";
+            }, 2000);
+          } else {
+            localStorage.setItem("paymentMethod", "GCash");
+            localStorage.setItem("account", mobileNumber); // Updated key
+            window.location.href = "./reciept.html";
+          }
         });
       }
 
