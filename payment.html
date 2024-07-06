@@ -113,13 +113,10 @@
             />
           </div>
           <b class="offsite1">Online</b>
-            <div class="process-button" id="processOnlineButton">
-              <img
-                class="process-button-child"
-                alt=""
-                src="./public/rectangle-4042.svg"
-              />
-              <div class="proceed proceed-online">PROCEED</div>
+          <div class="process-button1" id="proceedOnlineButton">
+            <div class="process-button-item"></div>
+            <div class="proceed-online">PROCEED</div>
+          </div>
         </form>
       </div>
     </div>
@@ -194,10 +191,10 @@
       });
     }
 
-    var processOnlineButton = document.getElementById("processOnlineButton");
+    var proceedOnlineButton = document.getElementById("proceedOnlineButton");
     var proceedOnlineText = document.querySelector(".proceed-online");
-    if (processOnlineButton) {
-      processOnlineButton.addEventListener("click", function (e) {
+    if (proceedOnlineButton) {
+      proceedOnlineButton.addEventListener("click", function (e) {
         const studentNumber = document.querySelector(".offsite .student-number-input").value;
         const amount = document.querySelector(".offsite .amount-input").value;
         const studentName = document.querySelector(".offsite .student-name-input").value;
@@ -212,9 +209,9 @@
 
           window.location.href = "./reciept.html";
         } else {
-          processOnlineButton.style.backgroundColor = "red";
+          proceedOnlineButton.style.backgroundColor = "red";
           setTimeout(() => {
-            processOnlineButton.style.backgroundColor = "";
+            proceedOnlineButton.style.backgroundColor = "";
           }, 2000);
         }
       });
@@ -223,7 +220,7 @@
     // Ensuring both the container and the text are clickable
     if (proceedOnlineText) {
       proceedOnlineText.addEventListener("click", function (e) {
-        processOnlineButton.click();
+        proceedOnlineButton.click();
       });
     }
 
