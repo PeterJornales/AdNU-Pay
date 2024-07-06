@@ -53,6 +53,7 @@
   height: 529px;
 }
 .form-city-inner {
+  font-size: 30px;
   position: absolute;
   top: 0;
   left: calc(50% - 242.25px);
@@ -74,11 +75,13 @@
 }
 .form-billingaddress-child2,
 .form-city2 {
+  font-size: 30px;
   position: absolute;
   top: 228.2px;
   left: calc(50% - 519.9px);
   width: 484.5px;
   height: 95.1px;
+  font-size: 30px;
 }
 .form-billingaddress-child2 {
   top: 0;
@@ -100,6 +103,7 @@
 }
 .form-billingaddress-child3,
 .form-billingaddress4 {
+  font-size: 30px;
   position: absolute;
   top: 96.2px;
   left: calc(50% - 519.9px);
@@ -125,6 +129,7 @@
   height: 35px;
 }
 .form-billingaddress5 {
+  font-size: 30px;
   position: absolute;
   top: 360.2px;
   left: calc(50% - 519.9px);
