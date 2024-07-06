@@ -534,3 +534,43 @@
   color: var(--color-tomato);
   font-family: var(--text-regular-2);
 }
+
+/* Default Toggle Styles */
+.toggle1 {
+  width: 52px;
+  position: relative;
+  height: 26px;
+  cursor: pointer;
+}
+
+.toggle-child {
+  position: absolute;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  background-color: var(--primary-1);
+  transition: left 0.3s;
+  left: 0; /* Default Position */
+}
+
+.elevation-3 {
+  position: absolute;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--neutral-white);
+  box-shadow: var(--shadow-3);
+  transition: left 0.3s;
+  left: 4px; /* Default Position */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Active State Styles */
+.toggle.active .toggle-child {
+  left: 30px; /* Moved Position */
+}
+
+.toggle.active .elevation-3 {
+  left: 30px; /* Moved Position */
+}
