@@ -117,7 +117,7 @@
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("amount").textContent = localStorage.getItem("amount");
+        document.getElementById("amount").textContent = "₱ " + localStorage.getItem("amount");
         document.getElementById("date").textContent = localStorage.getItem("date");
         document.getElementById("paymentFor").textContent = localStorage.getItem("paymentFor");
         document.getElementById("studentName").textContent = localStorage.getItem("studentName");
