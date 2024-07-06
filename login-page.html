@@ -1,205 +1,62 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./login-page.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-    />
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #121a4b; /* Adjust to match the exact background color */
-      }
-      .container {
-        display: flex;
-        width: 100%;
-        height: 100%;
-      }
-      .left-side {
-        flex: 1;
-        background-color: white;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-      }
-      .right-side {
-        flex: 1;
-        background-color: #121a4b; /* Adjust to match the exact background color */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 20px;
-      }
-      .logo-icon {
-        width: 150px; /* Adjust as needed */
-        margin-bottom: 20px;
-      }
-      .forms {
-        width: 80%;
-        margin-bottom: 20px;
-      }
-      .rectangle-parent8,
-      .rectangle-parent9 {
-        display: flex;
-        align-items: center;
-        position: relative;
-        width: 100%;
-        background-color: #f1f1f1;
-        border-radius: 5px;
-        margin-bottom: 10px;
-        padding: 10px;
-      }
-      .student-id2,
-      .sais-pin {
-        flex: 1;
-        font-size: 14px;
-        color: #555;
-      }
-      .user-icon,
-      .lock-alt-icon,
-      .view-icon {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-      }
-      .input-field {
-        flex: 1;
-        border: none;
-        outline: none;
-        background: none;
-        font-size: 14px;
-        color: #555;
-      }
-      .input-field::placeholder {
-        color: #555;
-      }
-      .need-assistance {
-        font-size: 12px;
-        text-decoration: underline;
-        color: #007bff;
-        text-align: right;
-        cursor: pointer;
-        margin-top: 5px;
-      }
-      .sign-in-with-student-id {
-        width: 100%;
-        background-color: #007bff;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        color: white;
-        font-size: 14px;
-        cursor: pointer;
-        margin-bottom: 20px;
-      }
-      .or {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        margin: 20px 0;
-      }
-      .or1 {
-        font-size: 12px;
-        color: white;
-        margin: 0 10px;
-      }
-      .or-child,
-      .or-item {
-        flex: 1;
-        height: 1px;
-        background-color: white;
-      }
-      .connect-with-google {
-        width: 100%;
-        background-color: #4285f4;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        color: white;
-        font-size: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-      .connect-with-google img {
-        width: 20px;
-        height: 20px;
-        margin-right: 10px;
-      }
-    </style>
-  </head>
-  <body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="login-page.css">
+    <title>ADNU PAY</title>
+</head>
+<body>
     <div class="container">
-      <div class="left-side">
-        <img class="logo-icon" alt="" src="./public/logo@2x.png" />
-        <h1>ADNU PAY</h1>
-      </div>
-      <div class="right-side">
-        <img class="logo-icon" alt="" src="./public/logo@2x.png" />
-        <div class="forms">
-          <div class="rectangle-parent8">
-            <img class="user-icon" alt="" src="./public/user.svg" />
-            <input type="text" class="input-field" placeholder="Student ID">
-          </div>
-          <div class="rectangle-parent9">
-            <img class="lock-alt-icon" alt="" src="./public/lock-alt.svg" />
-            <input type="password" class="input-field" placeholder="SAIS PIN">
-            <img class="view-icon" alt="" src="./public/view.svg" />
-          </div>
-          <div class="need-assistance">Need assistance?</div>
+        <div class="left-side">
+            <img src="public/login@2x.png" alt="ADNU Logo" class="logo">
         </div>
-        <button class="sign-in-with-student-id" id="signInWithStudentID">
-          LOGIN
-        </button>
-        <div class="or">
-          <div class="or-child"></div>
-          <b class="or1">OR</b>
-          <div class="or-item"></div>
+        <div class="right-side">
+            <img src="public/logo@2x.png" alt="Logo Above Login" class="logo-above-login">
+            <div class="form-container">
+                <div class="form-group">
+                    <input type="number" id="studentID" placeholder="Student ID">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="saisPIN" placeholder="SAIS PIN">
+                </div>
+                <div class="need-assistance">Need assistance?</div>
+                <button class="login-button" id="signInWithStudentID">LOGIN</button>
+                <div class="or">
+                    <div class="or-line"></div>
+                    <div class="or-text">OR</div>
+                    <div class="or-line"></div>
+                </div>
+                <button class="google-button" id="connectWithGoogle">
+                    Connect with ADNU GBOX
+                </button>
+            </div>
         </div>
-        <div class="connect-with-google" id="connectWithGoogle">
-          <img src="./public/google-icon.svg" alt="Google Icon">
-          Connect with ADNU GBOX
-        </div>
-      </div>
     </div>
     <script>
-      var signInWithStudentID = document.getElementById("signInWithStudentID");
-      if (signInWithStudentID) {
-        signInWithStudentID.addEventListener("click", function (e) {
-          window.location.href = "./dashboard.html";
-        });
-      }
-      var connectWithGoogle = document.getElementById("connectWithGoogle");
-      if (connectWithGoogle) {
-        connectWithGoogle.addEventListener("click", function (e) {
-          window.location.href = "./dashboard.html";
-        });
-      }
+        var signInWithStudentID = document.getElementById("signInWithStudentID");
+        if (signInWithStudentID) {
+          signInWithStudentID.addEventListener("click", function (e) {
+            var studentID = document.getElementById("studentID");
+            if (studentID.value.length !== 9) {
+                this.classList.add("invalid");
+                setTimeout(() => {
+                    this.classList.remove("invalid");
+                }, 2000);
+                e.preventDefault(); // Prevent form submission or navigation
+            } else {
+                window.location.href = "./dashboard.html";
+            }
+          });
+        }
+
+        var connectWithGoogle = document.getElementById("connectWithGoogle");
+        if (connectWithGoogle) {
+          connectWithGoogle.addEventListener("click", function (e) {
+            window.location.href = "./dashboard.html";
+          });
+        }
     </script>
-  </body>
+</body>
 </html>
