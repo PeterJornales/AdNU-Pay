@@ -61,12 +61,13 @@
   width: 185.4px;
   height: 9.4px;
 }
-.expenses {
+.expenses1 {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: calc(50% - 63.5px);
+  left: 363px;
   width: 337px;
   height: 127px;
+  font-family: var(--font-lexend);
 }
 .discount,
 .discount-earned {

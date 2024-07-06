@@ -88,7 +88,7 @@
       </div>
       <div class="extra1">
         <div class="settings3">Settings</div>
-        <div class="welcome">Welcome, KARL!</div>
+        <div class="welcome"></div>
         <img
           class="profile-icon1"
           alt=""
@@ -133,6 +133,20 @@
     </div>
 
     <script>
+// Function to display the student ID in the welcome message
+function displayStudentID() {
+    var studentID = localStorage.getItem("studentID");
+    if (studentID) {
+        var welcomeMessage = document.querySelector('.welcome');
+        if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+        }
+    }
+}
+
+// Call the function to display the student ID when the page loads
+document.addEventListener("DOMContentLoaded", displayStudentID);
+
       var backButtonContainer = document.getElementById("backButtonContainer");
       if (backButtonContainer) {
         backButtonContainer.addEventListener("click", function (e) {

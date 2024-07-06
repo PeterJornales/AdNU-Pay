@@ -35,35 +35,34 @@
         </div>
     </div>
     <script>
-
-        // JavaScript to prevent scrolling in number inputs
-document.addEventListener('wheel', function(event) {
-  if (document.activeElement.type === 'number') {
-    document.activeElement.blur();
-  }
-});
+        document.addEventListener('wheel', function(event) {
+            if (document.activeElement.type === 'number') {
+                document.activeElement.blur();
+            }
+        });
 
         var signInWithStudentID = document.getElementById("signInWithStudentID");
         if (signInWithStudentID) {
-          signInWithStudentID.addEventListener("click", function (e) {
-            var studentID = document.getElementById("studentID");
-            if (studentID.value.length !== 9) {
-                this.classList.add("invalid");
-                setTimeout(() => {
-                    this.classList.remove("invalid");
-                }, 2000);
-                e.preventDefault(); // Prevent form submission or navigation
-            } else {
-                window.location.href = "./dashboard.html";
-            }
-          });
+            signInWithStudentID.addEventListener("click", function (e) {
+                var studentID = document.getElementById("studentID");
+                if (studentID.value.length !== 9) {
+                    this.classList.add("invalid");
+                    setTimeout(() => {
+                        this.classList.remove("invalid");
+                    }, 2000);
+                    e.preventDefault();
+                } else {
+                    localStorage.setItem("studentID", studentID.value);
+                    window.location.href = "./dashboard.html";
+                }
+            });
         }
 
         var connectWithGoogle = document.getElementById("connectWithGoogle");
         if (connectWithGoogle) {
-          connectWithGoogle.addEventListener("click", function (e) {
-            window.location.href = "./dashboard.html";
-          });
+            connectWithGoogle.addEventListener("click", function (e) {
+                window.location.href = "./dashboard.html";
+            });
         }
     </script>
 </body>

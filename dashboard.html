@@ -36,22 +36,22 @@
               <div class="exam">Exam</div>
               <b class="b">₱12,358</b>
               <div class="downward-trend"></div>
-              <div class="recommended-payment">Recommended Payment</div>
+              <div class="recommended-payment">To pay</div>
             </div>
             <div class="expenses1">
-              <div class="discount-earned">Discount Earned</div>
+              <div class="discount-earned">Amount Paid</div>
               <div class="expenses-child"></div>
-              <div class="discount">Discount</div>
+              <div class="discount">Payment</div>
               <b class="b">₱5,336.03</b>
               <div class="expenses-inner"></div>
               <div class="downward-trend"></div>
             </div>
             <div class="expenses2">
               <div class="expenses-child"></div>
-              <div class="expenses3">Expenses</div>
+              <div class="expenses3">Tuition</div>
               <b class="b2">₱212,542.05</b>
               <div class="downward-trend"></div>
-              <div class="recommended-payment">Overall Total Expenses</div>
+              <div class="recommended-payment">Balance</div>
             </div>
             <div class="expenses4">
               <div class="downward-trend3"></div>
@@ -66,12 +66,6 @@
               <div class="bsit">2-BSIT</div>
             </div>
           </div>
-          <div class="credit">
-            <div class="credit-balance-parent">
-              <div class="credit-balance">Credit Balance</div>
-              <b class="b3">₱40,054</b>
-            </div>
-          </div>
           <div class="files-in-date">
             <div class="files-in-time">
               <div class="files-in-time-child"></div>
@@ -80,7 +74,6 @@
                 alt=""
                 src="./public/vector-428.svg"
               />
-
               <div class="files-in-time-inner"></div>
               <div class="files-in-time-child1"></div>
               <div class="files-in-time-child2"></div>
@@ -118,7 +111,7 @@
           </div>
         </div>
         <div class="extra10">
-          <div class="welcome5">Welcome, KARL!</div>
+          <div class="welcome5"></div>
           <img
             class="profile-icon10"
             alt=""
@@ -160,6 +153,21 @@
     </div>
 
     <script>
+
+      // Function to display the student ID in the welcome message
+function displayStudentID() {
+    var studentID = localStorage.getItem("studentID");
+    if (studentID) {
+        var welcomeMessage = document.querySelector('.welcome5');
+        if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+        }
+    }
+}
+
+// Call the function to display the student ID when the page loads
+document.addEventListener("DOMContentLoaded", displayStudentID);
+
       var profileIcon = document.getElementById("profileIcon");
       if (profileIcon) {
         profileIcon.addEventListener("click", function (e) {

@@ -37,7 +37,7 @@
 
       <div class="extra5">
         <div class="settings16">Settings</div>
-        <div class="name5">Welcome, KARL!</div>
+        <div class="name5"></div>
         <div class="extra-child2"></div>
         <img
           class="profile-icon5"
@@ -138,6 +138,21 @@
       </div>
     </div>
     <script>
+
+      // Function to display the student ID in the welcome message
+function displayStudentID() {
+    var studentID = localStorage.getItem("studentID");
+    if (studentID) {
+        var welcomeMessage = document.querySelector('.name5');
+        if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+        }
+    }
+}
+
+// Call the function to display the student ID when the page loads
+document.addEventListener("DOMContentLoaded", displayStudentID);
+
 
       // JavaScript to prevent scrolling in number inputs
 document.addEventListener('wheel', function(event) {

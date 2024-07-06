@@ -155,6 +155,21 @@
     </div>
     <script>
 
+      // Function to display the student ID in the welcome message
+function displayStudentID() {
+    var studentID = localStorage.getItem("studentID");
+    if (studentID) {
+        var welcomeMessage = document.querySelector('.name3');
+        if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+        }
+    }
+}
+
+// Call the function to display the student ID when the page loads
+document.addEventListener("DOMContentLoaded", displayStudentID);
+
+
       // JavaScript to prevent scrolling in number inputs
 document.addEventListener('wheel', function(event) {
   if (document.activeElement.type === 'number') {

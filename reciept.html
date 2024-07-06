@@ -34,7 +34,7 @@
           src="./public/profile@2x.png"
           id="profileIcon"
         />
-        <div class="welcome3">Welcome, KARL!</div>
+        <div class="welcome3"></div>
         <div class="extra-child5"></div>
       </div>
       <div class="queue-confirmation3">
@@ -57,7 +57,7 @@
                 <div class="bank-transfer" id="paymentMethod"></div>
               </div>
               <div class="payment-detail4">
-                <div class="ref-number">Account Number</div>
+                <div class="ref-number">Account</div>
                 <div class="bank-transfer" id="amount"></div>
               </div>
             </div>
@@ -113,6 +113,21 @@
   </div>
 
   <script>
+
+    // Function to display the student ID in the welcome message
+function displayStudentID() {
+    var studentID = localStorage.getItem("studentID");
+    if (studentID) {
+        var welcomeMessage = document.querySelector('.welcome3');
+        if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+        }
+    }
+}
+
+// Call the function to display the student ID when the page loads
+document.addEventListener("DOMContentLoaded", displayStudentID);
+
     var profileIcon = document.getElementById("profileIcon");
     if (profileIcon) {
       profileIcon.addEventListener("click", function (e) {

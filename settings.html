@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
     <title>Toggle Switch Example</title>
@@ -23,251 +23,268 @@
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
     />
     <style>
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 90%;
+  height: 90%;
+  margin: auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
       .toggle1 {
-  width: 54px;
-  position: relative;
-  height: 26px;
-  cursor: pointer;
-  background-color: #ccc; /* Default Background */
-  border-radius: 26px;
-  transition: background-color 0.3s;
-}
+        width: 54px;
+        position: relative;
+        height: 26px;
+        cursor: pointer;
+        background-color: #ccc;
+        border-radius: 26px;
+        transition: background-color 0.3s;
+      }
 
-/* Toggle Circle */
-.toggle-child {
-  position: absolute;
-  border-radius: 50%;
-  width: 26px;
-  height: 26px;
-  background-color: var(--primary-1);
-  transition: left 0.3s;
-  left: 0; /* Default Position */
-}
+      .toggle-child {
+        position: absolute;
+        border-radius: 50%;
+        width: 26px;
+        height: 26px;
+        background-color: var(--primary-1);
+        transition: left 0.3s;
+        left: 0;
+      }
 
-/* Inner Circle */
-.elevation-3 {
-  position: absolute;
-  border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  background-color: var(--neutral-white);
-  box-shadow: var(--shadow-3);
-  transition: left 0.3s;
-  left: 4px; /* Default Position */
-  top: 50%;
-  transform: translateY(-50%);
-}
+      .elevation-3 {
+        position: absolute;
+        border-radius: 50%;
+        width: 16px;
+        height: 16px;
+        background-color: var(--neutral-white);
+        box-shadow: var(--shadow-3);
+        transition: left 0.3s;
+        left: 4px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
 
-/* Active State Styles */
-.toggle.active .toggle-child {
-  left: 26px; /* Moved Position */
-}
+      .toggle.active .toggle-child {
+        left: 26px;
+      }
 
-.toggle.active .elevation-3 {
-  left: 30px; /* Moved Position */
-}
+      .toggle.active .elevation-3 {
+        left: 30px;
+      }
 
-.toggle.active .toggle1 {
-  background-color: var(--primary-1); /* Active Background */
-}
-
+      .toggle.active .toggle1 {
+        background-color: var(--primary-1);
+      }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="settings6">
-      <div class="account-setting">
-        <img class="grad-icon2" alt="" src="./public/grad.svg" />
-        <div class="container-wrapper">
-          <div class="container1">
-            <div class="container-item"></div>
-          </div>
-        </div>
-        <div class="icon-log-out">
-          <img
-            class="logout-logo-icon"
-            alt=""
-            src="./public/logoutlogo.svg"
-            id="logoutLogo"
-          />
-          <div class="vector-parent" id="groupContainer">
-            <img class="rectangle-icon" alt="" src="./public/back-button.svg" />
-            <div class="logout">Logout</div>
-          </div>
-        </div>
-        <div class="account">
-          <div class="auto-update">
-            <div class="toggle" id="toggle1">
-              <div class="option">Option</div>
-              <div class="toggle1">
-                <div class="toggle-child"></div>
-                <div class="elevation-3"></div>
-              </div>
+        <div class="account-setting">
+            <img class="grad-icon2" alt="" src="./public/grad.svg" />
+            <div class="container-wrapper">
+                <div class="container1">
+                    <div class="container-item"></div>
+                </div>
             </div>
-            <div class="auto-update1">Auto Update</div>
-          </div>
-          <div class="notifications">
-            <div class="toggle" id="toggle2">
-              <div class="option">Option</div>
-              <div class="toggle1">
-                <div class="toggle-child"></div>
-                <div class="elevation-3"></div>
-              </div>
+            <div class="icon-log-out">
+                <div class="vector-parent" id="groupContainer">
+                    <img class="rectangle-icon" alt="" src="./public/back-button.svg" />
+                    <div class="logout">Logout</div>
+                </div>
             </div>
-            <div class="auto-update1">Notifications</div>
-          </div>
-          <div class="general">General</div>
-          <div class="change-account-pin4">
-            <div class="button2">
-              <img class="icons" alt="" src="./public/icons2.svg" />
-              <div class="button1">Button</div>
-              <img
-                class="icons1"
+            <div class="account">
+                <div class="auto-update">
+                    <div class="toggle" id="toggle1">
+                        <div class="option">Option</div>
+                        <div class="toggle1">
+                            <div class="toggle-child"></div>
+                            <div class="elevation-3"></div>
+                        </div>
+                    </div>
+                    <div class="auto-update1">Auto Update</div>
+                </div>
+                <div class="notifications">
+                    <div class="toggle" id="toggle2">
+                        <div class="option">Option</div>
+                        <div class="toggle1">
+                            <div class="toggle-child"></div>
+                            <div class="elevation-3"></div>
+                        </div>
+                    </div>
+                    <div class="auto-update1">Notifications</div>
+                </div>
+                <div class="general">General</div>
+                <div class="change-account-pin4">
+                    <div class="button2">
+                        <img class="icons" alt="" src="./public/icons2.svg" />
+                        <div class="button1">Button</div>
+                        <img
+                            class="icons1"
+                            alt=""
+                            src="./public/icons3.svg"
+                            id="icons1"
+                        />
+                    </div>
+                </div>
+                <div class="account-information4">
+                    <div class="account-information5" id="accountInformationText">
+                        Account information
+                    </div>
+                    <img class="icon-user" alt="" src="./public/-icon-user.svg" />
+                </div>
+                <div class="account1">Account</div>
+            </div>
+        </div>
+        <div class="extra2">
+            <div class="settings7">Settings</div>
+            <div class="name2"></div>
+            <div class="extra-inner"></div>
+            <img
+                class="profile-icon2"
                 alt=""
-                src="./public/icons3.svg"
-                id="icons1"
-              />
+                src="./public/profile@2x.png"
+                id="profileIcon"
+            />
+        </div>
+        <div class="sidebar2">
+            <div class="background2"></div>
+            <div class="adnupay-ver01beta2">AdNUPay ver0.1beta</div>
+            <div class="hover2"></div>
+            <div class="settings8">
+                <div class="settings9">Settings</div>
+                <div class="rectangle-container">
+                    <div class="group-child5"></div>
+                    <div class="group-child6"></div>
+                    <div class="group-child7"></div>
+                    <div class="group-child8"></div>
+                </div>
             </div>
-          </div>
-          <div class="account-information4">
-            <div class="account-information5" id="accountInformationText">
-              Account information
+            <div class="transaction4" id="transactionContainer">
+                <div class="transaction5">Transaction</div>
+                <img class="transaction-inner" alt="" src="./public/group-4.svg" />
             </div>
-            <img class="icon-user" alt="" src="./public/-icon-user.svg" />
-          </div>
-          <div class="account1">Account</div>
+            <div class="payment4" id="paymentContainer">
+                <div class="payment5">Payment</div>
+                <img class="payment-inner" alt="" src="./public/group-3.svg" />
+            </div>
+            <div class="dashboard5" id="dashboardContainer">
+                <div class="dashboard6">Dashboard</div>
+                <img class="dashboard-inner" alt="" src="./public/group-21.svg" />
+            </div>
+            <img
+                class="header-icon2"
+                alt=""
+                src="./public/header@2x.png"
+                id="headerImage"
+            />
         </div>
-      </div>
-      <div class="extra2">
-        <div class="settings7">Settings</div>
-        <div class="name2">Welcome, KARL!</div>
-        <div class="extra-inner"></div>
-        <img
-          class="profile-icon2"
-          alt=""
-          src="./public/profile@2x.png"
-          id="profileIcon"
-        />
-      </div>
-      <div class="sidebar2">
-        <div class="background2"></div>
-        <div class="adnupay-ver01beta2">AdNUPay ver0.1beta</div>
-        <div class="hover2"></div>
-        <div class="settings8">
-          <div class="settings9">Settings</div>
-          <div class="rectangle-container">
-            <div class="group-child5"></div>
-            <div class="group-child6"></div>
-            <div class="group-child7"></div>
-            <div class="group-child8"></div>
-          </div>
-        </div>
-        <div class="transaction4" id="transactionContainer">
-          <div class="transaction5">Transaction</div>
-          <img class="transaction-inner" alt="" src="./public/group-4.svg" />
-        </div>
-        <div class="payment4" id="paymentContainer">
-          <div class="payment5">Payment</div>
-          <img class="payment-inner" alt="" src="./public/group-3.svg" />
-        </div>
-        <div class="dashboard5" id="dashboardContainer">
-          <div class="dashboard6">Dashboard</div>
-          <img class="dashboard-inner" alt="" src="./public/group-21.svg" />
-        </div>
-        <img
-          class="header-icon2"
-          alt=""
-          src="./public/header@2x.png"
-          id="headerImage"
-        />
-      </div>
     </div>
     <script>
-      function setupToggle(toggleId) {
-        var toggle = document.getElementById(toggleId);
-        toggle.addEventListener('click', function () {
-          this.classList.toggle('active');
-        });
-      }
 
-      setupToggle('toggle1');
-      setupToggle('toggle2');
+      
 
-      var logoutLogo = document.getElementById("logoutLogo");
-      if (logoutLogo) {
-        logoutLogo.addEventListener("click", function (e) {
-          window.location.href = "./index.html";
-        });
-      }
+      // Function to display the student ID in the welcome message
+function displayStudentID() {
+    var studentID = localStorage.getItem("studentID");
+    if (studentID) {
+        var welcomeMessage = document.querySelector('.name2');
+        if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+        }
+    }
+}
 
-      var groupContainer = document.getElementById("groupContainer");
-      if (groupContainer) {
-        groupContainer.addEventListener("click", function (e) {
-          window.location.href = "./index.html";
-        });
-      }
+// Call the function to display the student ID when the page loads
+document.addEventListener("DOMContentLoaded", displayStudentID);
 
-      var icons1 = document.getElementById("icons1");
-      if (icons1) {
-        icons1.addEventListener("click", function (e) {
-          window.location.href = "./change-account-pin.html";
-        });
-      }
+        function displayStudentID() {
+            var studentID = localStorage.getItem("studentID");
+            if (studentID) {
+                var welcomeMessage = document.querySelector('.name2');
+                if (welcomeMessage) {
+                    welcomeMessage.textContent = "Welcome, " + studentID + "!";
+                }
+            }
+        }
 
-      var icons1 = document.getElementById("icons1");
-      if (icons1) {
-        icons1.addEventListener("click", function (e) {
-          window.location.href = "./account-information.html";
-        });
-      }
+        document.addEventListener("DOMContentLoaded", displayStudentID);
 
-      var changeAccountPin = document.getElementById("changeAccountPin");
-      if (changeAccountPin) {
-        changeAccountPin.addEventListener("click", function (e) {
-          window.location.href = "./change-account-pin.html";
-        });
-      }
+        function setupToggle(toggleId) {
+            var toggle = document.getElementById(toggleId);
+            toggle.addEventListener('click', function () {
+                this.classList.toggle('active');
+            });
+        }
 
-      var accountInformationText = document.getElementById("accountInformationText");
-      if (accountInformationText) {
-        accountInformationText.addEventListener("click", function (e) {
-          window.location.href = "./account-information.html";
-        });
-      }
+        setupToggle('toggle1');
+        setupToggle('toggle2');
 
-      var profileIcon = document.getElementById("profileIcon");
-      if (profileIcon) {
-        profileIcon.addEventListener("click", function (e) {
-          window.location.href = "./account-information.html";
-        });
-      }
+        var groupContainer = document.getElementById("groupContainer");
+        if (groupContainer) {
+            groupContainer.addEventListener("click", function (e) {
+                window.location.href = "./index.html";
+            });
+        }
 
-      var transactionContainer = document.getElementById("transactionContainer");
-      if (transactionContainer) {
-        transactionContainer.addEventListener("click", function (e) {
-          window.location.href = "./transaction.html";
-        });
-      }
+        var icons1 = document.getElementById("icons1");
+        if (icons1) {
+            icons1.addEventListener("click", function (e) {
+                window.location.href = "./change-account-pin.html";
+            });
+        }
 
-      var paymentContainer = document.getElementById("paymentContainer");
-      if (paymentContainer) {
-        paymentContainer.addEventListener("click", function (e) {
-          window.location.href = "./payment.html";
-        });
-      }
+        var accountInformationText = document.getElementById("accountInformationText");
+        if (accountInformationText) {
+            accountInformationText.addEventListener("click", function (e) {
+                window.location.href = "./account-information.html";
+            });
+        }
 
-      var dashboardContainer = document.getElementById("dashboardContainer");
-      if (dashboardContainer) {
-        dashboardContainer.addEventListener("click", function (e) {
-          window.location.href = "./dashboard.html";
-        });
-      }
+        var profileIcon = document.getElementById("profileIcon");
+        if (profileIcon) {
+            profileIcon.addEventListener("click", function (e) {
+                window.location.href = "./account-information.html";
+            });
+        }
 
-      var headerImage = document.getElementById("headerImage");
-      if (headerImage) {
-        headerImage.addEventListener("click", function (e) {
-          window.location.href = "./dashboard.html";
-        });
-      }
+        var transactionContainer = document.getElementById("transactionContainer");
+        if (transactionContainer) {
+            transactionContainer.addEventListener("click", function (e) {
+                window.location.href = "./transaction.html";
+            });
+        }
+
+        var paymentContainer = document.getElementById("paymentContainer");
+        if (paymentContainer) {
+            paymentContainer.addEventListener("click", function (e) {
+                window.location.href = "./payment.html";
+            });
+        }
+
+        var dashboardContainer = document.getElementById("dashboardContainer");
+        if (dashboardContainer) {
+            dashboardContainer.addEventListener("click", function (e) {
+                window.location.href = "./dashboard.html";
+            });
+        }
+
+        var headerImage = document.getElementById("headerImage");
+        if (headerImage) {
+            headerImage.addEventListener("click", function (e) {
+                window.location.href = "./dashboard.html";
+            });
+        }
     </script>
-  </body>
+</body>
 </html>

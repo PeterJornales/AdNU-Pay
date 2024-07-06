@@ -43,7 +43,7 @@
           src="./public/profile@2x.png"
           id="profileIcon"
         />
-        <div class="welcome4">Welcome, KARL!</div>
+        <div class="welcome4"></div>
         <div class="extra-child6"></div>
       </div>
       <div class="onsite-form">
@@ -60,10 +60,9 @@
             </div>
             <div class="amount4">
               <input
-                type="number"
+                type="text"
                 class="amount-input input-with-padding"
                 placeholder="Amount"
-                oninput="this.value=this.value.replace(/[^0-9]/g,'');"
               />
             </div>
           </div>
@@ -115,10 +114,9 @@
           </div>
           <div class="form-amount2">
             <input
-              type="number"
+              type="text"
               class="amount-input input-with-padding"
               placeholder="Amount"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
             />
           </div>
           <b class="offsite1">Online</b>
@@ -164,6 +162,21 @@
   </div>
 
   <script>
+
+    // Function to display the student ID in the welcome message
+function displayStudentID() {
+    var studentID = localStorage.getItem("studentID");
+    if (studentID) {
+        var welcomeMessage = document.querySelector('.welcome4');
+        if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+        }
+    }
+}
+
+// Call the function to display the student ID when the page loads
+document.addEventListener("DOMContentLoaded", displayStudentID);
+
 
     // JavaScript to prevent scrolling in number inputs
 document.addEventListener('wheel', function(event) {

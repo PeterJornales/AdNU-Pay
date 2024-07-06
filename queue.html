@@ -37,7 +37,7 @@
             id="profileIcon"
           />
 
-          <div class="welcome2">Welcome, KARL!</div>
+          <div class="welcome2"></div>
           <div class="extra-child4"></div>
         </div>
         <div class="queue-confirmation1">
@@ -116,6 +116,22 @@
     </div>
 
     <script>
+
+      // Function to display the student ID in the welcome message
+function displayStudentID() {
+    var studentID = localStorage.getItem("studentID");
+    if (studentID) {
+        var welcomeMessage = document.querySelector('.welcome2');
+        if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+        }
+    }
+}
+
+// Call the function to display the student ID when the page loads
+document.addEventListener("DOMContentLoaded", displayStudentID);
+
+
       document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("amount").textContent = "₱ " + localStorage.getItem("amount");
         document.getElementById("date").textContent = localStorage.getItem("date");
