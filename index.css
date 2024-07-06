@@ -27,7 +27,7 @@ body {
 }
 
 .logo .logo-icon {
-  height: 200px; /* Increased logo size */
+  height: 100px; /* Increased logo size */
   margin: 0 -20px; /* Adjusted margin to bring closer to the "AD" and "U" */
 }
 
