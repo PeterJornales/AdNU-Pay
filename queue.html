@@ -48,21 +48,21 @@
               <div class="row-1">
                 <div class="payment-detail">
                   <div class="student-name">Amount</div>
-                  <div class="div11">₱12,500.00</div>
+                  <div class="div11" id="amount"></div>
                 </div>
                 <div class="payment-detail">
                   <div class="student-name">Date</div>
-                  <div class="july-2024-1322">1 July 2024, 13:22</div>
+                  <div class="july-2024-1322" id="date"></div>
                 </div>
               </div>
               <div class="row-1">
                 <div class="payment-detail">
-                  <div class="student-name">Payment Method</div>
-                  <div class="cash">CASH</div>
+                  <div class="student-name">Payment For</div>
+                  <div class="cash" id="paymentFor"></div>
                 </div>
                 <div class="payment-detail">
                   <div class="student-name">Student Name</div>
-                  <div class="cash">Karl Lumabi</div>
+                  <div class="cash" id="studentName"></div>
                 </div>
               </div>
             </div>
@@ -116,6 +116,13 @@
     </div>
 
     <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document.getElementById("amount").textContent = localStorage.getItem("amount");
+        document.getElementById("date").textContent = localStorage.getItem("date");
+        document.getElementById("paymentFor").textContent = localStorage.getItem("paymentFor");
+        document.getElementById("studentName").textContent = localStorage.getItem("studentName");
+      });
+
       var profileIcon = document.getElementById("profileIcon");
       if (profileIcon) {
         profileIcon.addEventListener("click", function (e) {
