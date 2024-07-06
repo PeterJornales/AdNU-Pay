@@ -63,6 +63,7 @@
   box-sizing: border-box;
   width: 484.5px;
   height: 95.1px;
+  font-size: 30px;
 }
 .phone-number {
   position: absolute;
@@ -81,6 +82,7 @@
   left: calc(50% - 516.5px);
   width: 484.5px;
   height: 95.1px;
+  font-size: 30px;
 }
 .form-billingaddress-inner {
   top: 0;
@@ -415,3 +417,4 @@
   color: var(--color-whitesmoke-100);
   font-family: var(--text-regular-2);
 }
+
