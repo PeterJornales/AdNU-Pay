@@ -500,3 +500,49 @@
   color: var(--color-darkgray-200);
   font-family: var(--text-regular-2);
 }
+
+/* Add this CSS to your payment.css file or a separate CSS file */
+
+/* General styles for the input fields */
+input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Styles for the dropdown */
+select.payment-dropdown {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border: 1px solid #9b8fcf;
+  border-radius: 4px;
+}
+
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjust the gap as needed */
+}
+
+.student-number-input,
+.amount-input {
+  width: 100%; /* Make the input take up the full width of the container */
+  height: 40px;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+
+
