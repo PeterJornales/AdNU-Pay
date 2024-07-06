@@ -160,6 +160,16 @@
   width: 82.3px;
   height: 18.1px;
 }
+.proceed-online {
+  position: absolute;
+  top: 18.9px;
+  left: 100.4px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  width: 82.3px;
+  height: 18.1px;
+}
 .process-button {
   position: absolute;
   top: 385px;
@@ -543,6 +553,13 @@ input[type="number"]::-webkit-inner-spin-button {
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
-
-
-
+.input-field {
+  width: 100%;
+  max-width: 350px; /* or any desired max width */
+  padding: 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
