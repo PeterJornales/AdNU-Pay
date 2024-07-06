@@ -22,6 +22,14 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
     />
+    <style>
+      .group-child14.error {
+        background-color: red;
+      }
+      .confirm3.error {
+        color: white;
+      }
+    </style>
   </head>
   <body>
     <div class="payment-paypal">
@@ -47,6 +55,7 @@
               type="number"
               class="form-city-item"
               placeholder="Phone Number"
+              id="phoneNumber"
             />
           </div>
         </div>
@@ -57,6 +66,8 @@
               type="text"
               class="form-billingaddress-inner"
               placeholder="Email Address"
+              id="emailAddress"
+              required
             />
           </div>
         </div>
@@ -67,6 +78,7 @@
               type="number"
               class="form-billingaddress-inner"
               placeholder="Password"
+              id="password"
             />
           </div>
         </div>
@@ -77,7 +89,6 @@
             alt=""
             src="./public/rectangle-40481.svg"
           />
-
           <div class="confirm3">CONFIRM</div>
         </div>
       </div>
@@ -90,18 +101,16 @@
             src="./public/rectangle-4028@2x.png"
             id="rectangleImage"
           />
-
           <img
             class="payment-method-child2"
             alt=""
             src="./public/rectangle-4027@2x.png"
           />
-
           <img
             class="payment-method-child3"
             alt=""
             src="./public/rectangle-4026@2x.png"
-            id="rectangleImage2"
+            id="rectangleImage2" 
           />
         </div>
         <div class="card-type1">Card Type</div>
@@ -153,7 +162,25 @@
       var groupContainer = document.getElementById("groupContainer");
       if (groupContainer) {
         groupContainer.addEventListener("click", function (e) {
-          window.location.href = "./reciept.html";
+          var phoneNumber = document.getElementById("phoneNumber").value;
+          var emailAddress = document.getElementById("emailAddress").value;
+          var password = document.getElementById("password").value;
+          if (phoneNumber === "" || emailAddress === "" || password === "") {
+            var groupChild14 = document.querySelector(".group-child14");
+            var confirmText = document.querySelector(".confirm3");
+            groupChild14.classList.add("error");
+            confirmText.classList.add("error");
+            confirmText.innerText = "CONFIRM";
+            setTimeout(function () {
+              groupChild14.classList.remove("error");
+              confirmText.classList.remove("error");
+              confirmText.innerText = "CONFIRM";
+            }, 2000);
+          } else {
+            localStorage.setItem("paymentMethod", "PayPal");
+            localStorage.setItem("account", emailAddress); // Updated key
+            window.location.href = "./reciept.html";
+          }
         });
       }
 
