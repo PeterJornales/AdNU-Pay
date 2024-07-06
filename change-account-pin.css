@@ -502,3 +502,24 @@
   color: var(--color-gray-200);
   font-family: var(--text-regular-2);
 }
+
+/* Ensure the container takes the desired width */
+.confirm-new-pin, .new-card-pin, .select-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%; /* Adjust width as needed */
+  max-width: 500px; /* Example max width */
+  margin: 0 auto; /* Center the container if needed */
+}
+
+/* Make sure the input field takes the full width of its container */
+.form-billingaddress-inner, .new-card-pin-input, .select-card-select {
+  width: 100%;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Optional: Add some padding or margin if needed */
+.form-billingaddress-inner, .new-card-pin-input, .select-card-select {
+  padding: 10px; /* Adjust as needed */
+  font-size: 16px; /* Adjust text size as needed */
+}
