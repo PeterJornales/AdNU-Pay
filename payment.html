@@ -164,6 +164,14 @@
   </div>
 
   <script>
+
+    // JavaScript to prevent scrolling in number inputs
+document.addEventListener('wheel', function(event) {
+  if (document.activeElement.type === 'number') {
+    document.activeElement.blur();
+  }
+});
+
     var profileIcon = document.getElementById("profileIcon");
     if (profileIcon) {
       profileIcon.addEventListener("click", function (e) {
