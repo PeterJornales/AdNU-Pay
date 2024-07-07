@@ -1,0 +1,189 @@
+:root {
+    --color-darkslateblue-100: #121a4b;
+    --color-darkslateblue-200: #121a4b;
+    --color-whitesmoke-200: #f1f1f1;
+    --color-darkgray-100: #555;
+    --color-royalblue-100: #007bff;
+    --neutral-white: #fff;
+    --font-size-xs: 14px;
+    --font-size-mini: 12px;
+    --font-lato: 'Lato', sans-serif;
+    --br-31xl: 31px;
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-darkslateblue-200);
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    width: 70%;
+    height: 80%;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .left-side, .right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .left-side {
+    width: 120%; /* Adjusted width */
+    background-color: #121a4b;
+    align-items: flex-start;
+    padding-left: 5%;
+  }
+  
+  .right-side {
+    width: 50%; /* Adjusted width */
+    background-color: #121a4b;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    padding-left: 5%;
+  }
+  
+  .logo {
+    width: 150px; /* Adjust this value to change the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px;
+  }
+  
+  .logo-above-login {
+    width: 200px; /* Set the width of the logo above login */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 40px; /* Add space below the logo */
+  }
+  
+  .form-container {
+    width: 80%;
+    position: relative;
+  }
+  
+  .form-group {
+    display: flex;
+    align-items: center;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .form-group input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .form-group input::placeholder {
+    color: #555;
+  }
+  
+  .need-assistance {
+    font-size: 12px;
+    color: #007bff;
+    text-align: right;
+    cursor: pointer;
+    margin-top: 5px;
+  }
+  
+  .login-button, .google-button {
+    width: 100%;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 5px;
+  }
+  
+  .google-button {
+    background-color: #4285f4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .or {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .or-text {
+    font-size: 12px;
+    color: white;
+    margin: 0 10px;
+  }
+  
+  .or-line {
+    flex: 1;
+    height: 1px;
+    background-color: white;
+  }
+  
+  .logo {
+    width: 700px;
+  }
+  
+  .form-group input[type=number]::-webkit-outer-spin-button,
+  .form-group input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  
+  .invalid {
+    background-color: red !important;
+    color: white !important;
+  }
+  
+  input[type="number"]::-webkit-outer-spin-button,
+  input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+
+  /* Fade out animation */
+.fade-out {
+    animation: fadeOut 0.5s forwards;
+}
+
+/* Fade in animation */
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

@@ -38,11 +38,11 @@
           <div class="account-information2">
             <div class="student-id-parent">
               <div class="student-id">
-                <div class="div2">202400001</div>
+                <div class="div2" id="studentID"></div>
                 <div class="student-id1">Student Id :</div>
               </div>
               <div class="name">
-                <div class="snoop-dog">Snoop Dog</div>
+                <div class="snoop-dog" id="name"></div>
                 <div class="name1">Name :</div>
               </div>
               <div class="course">
@@ -59,11 +59,7 @@
               </div>
               <div class="gbox">
                 <div class="gbox1">Gbox:</div>
-                <div class="sdoggboxadnueduph">Sdog@gbox.adnu.edu.ph</div>
-              </div>
-              <div class="gmail">
-                <div class="cellphone-no">Gmail:</div>
-                <div class="sdoggboxadnueduph1">Sdog@gbox.adnu.edu.ph</div>
+                <div class="sdoggboxadnueduph" id="gbox"></div>
               </div>
               <div class="cellphone">
                 <div class="cellphone-no">Cellphone no:</div>
@@ -133,19 +129,39 @@
     </div>
 
     <script>
-// Function to display the student ID in the welcome message
-function displayStudentID() {
-    var studentID = localStorage.getItem("studentID");
-    if (studentID) {
-        var welcomeMessage = document.querySelector('.welcome');
-        if (welcomeMessage) {
+      // Function to display the student ID in the welcome message
+      function displayStudentID() {
+        var studentID = localStorage.getItem("studentID");
+        if (studentID) {
+          var welcomeMessage = document.querySelector('.welcome');
+          if (welcomeMessage) {
             welcomeMessage.textContent = "Welcome, " + studentID + "!";
+          }
         }
-    }
-}
+      }
 
-// Call the function to display the student ID when the page loads
-document.addEventListener("DOMContentLoaded", displayStudentID);
+      // Function to populate account information from localStorage
+      function populateAccountInfo() {
+        var name = localStorage.getItem("name");
+        var studentID = localStorage.getItem("studentID");
+        var gbox = localStorage.getItem("gbox");
+
+        if (name) {
+          document.getElementById("name").textContent = name;
+        }
+        if (studentID) {
+          document.getElementById("studentID").textContent = studentID;
+        }
+        if (gbox) {
+          document.getElementById("gbox").textContent = gbox;
+        }
+      }
+
+      // Call the functions to display the student ID and populate account information when the page loads
+      document.addEventListener("DOMContentLoaded", function() {
+        displayStudentID();
+        populateAccountInfo();
+      });
 
       var backButtonContainer = document.getElementById("backButtonContainer");
       if (backButtonContainer) {

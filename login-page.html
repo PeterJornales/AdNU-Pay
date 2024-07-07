@@ -4,8 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
-    <link rel="stylesheet" href="login-page.css">
+    <link rel="stylesheet" href="login-account.css">
     <title>ADNU PAY</title>
+    <style>
+        .underline {
+            text-decoration: underline;
+            cursor: pointer; /* Makes it look clickable */
+        }
+        .invalid {
+            border: 1px solid red;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -16,22 +29,23 @@
             <img src="public/logo@2x.png" alt="Logo Above Login" class="logo-above-login">
             <div class="form-container">
                 <div class="form-group">
-                    <input type="number" id="studentID" placeholder="Student ID">
+                    <input type="text" id="gboxAccount" placeholder="Email">
                 </div>
                 <div class="form-group">
-                    <input type="password" id="saisPIN" placeholder="SAIS PIN">
+                    <input type="password" id="passwordGbox" placeholder="Password">
                 </div>
-                <div class="need-assistance">Need assistance?</div>
-                <button class="login-button" id="signInWithStudentID">LOGIN</button>
+                <button class="login-button" id="signInWithGbox">LOGIN</button>
                 <div class="or">
                     <div class="or-line"></div>
                     <div class="or-text">OR</div>
                     <div class="or-line"></div>
                 </div>
-                <button class="google-button" id="connectWithGoogle">
-                    Connect with ADNU GBOX
+                <button class="google-button" id="connectWithStudentID">
+                    Connect with Student ID
                 </button>
             </div>
+            <div id="errorMessage" class="error-message"></div>
+            <div class="need-assistance">Don't have an account yet? <span class="underline" id="signup">Sign up</span></div>
         </div>
     </div>
     <script>
@@ -41,27 +55,43 @@
             }
         });
 
-        var signInWithStudentID = document.getElementById("signInWithStudentID");
-        if (signInWithStudentID) {
-            signInWithStudentID.addEventListener("click", function (e) {
-                var studentID = document.getElementById("studentID");
-                if (studentID.value.length !== 9) {
-                    this.classList.add("invalid");
-                    setTimeout(() => {
-                        this.classList.remove("invalid");
-                    }, 2000);
-                    e.preventDefault();
-                } else {
-                    localStorage.setItem("studentID", studentID.value);
+        var signInWithGbox = document.getElementById("signInWithGbox");
+        if (signInWithGbox) {
+            signInWithGbox.addEventListener("click", function (e) {
+                var gboxAccount = document.getElementById("gboxAccount").value;
+                var passwordGbox = document.getElementById("passwordGbox").value;
+
+                if (!gboxAccount.includes("@gbox.adnu.edu.ph")) {
+                    alert("Invalid email. Please enter a valid gbox.adnu.edu.ph email.");
+                    return;
+                }
+
+                var storedGbox = localStorage.getItem("gbox");
+                var storedPassword = localStorage.getItem("password");
+
+                if (gboxAccount === storedGbox && passwordGbox === storedPassword) {
                     window.location.href = "./dashboard.html";
+                } else {
+                    var errorMessage = document.getElementById("errorMessage");
+                    errorMessage.textContent = "Account doesn't exist. Please create an account.";
+                    setTimeout(() => {
+                        errorMessage.textContent = "";
+                    }, 2000);
                 }
             });
         }
 
-        var connectWithGoogle = document.getElementById("connectWithGoogle");
-        if (connectWithGoogle) {
-            connectWithGoogle.addEventListener("click", function (e) {
-                window.location.href = "./dashboard.html";
+        var connectWithStudentID = document.getElementById("connectWithStudentID");
+        if (connectWithStudentID) {
+            connectWithStudentID.addEventListener("click", function (e) {
+                window.location.href = "./login-page.html";
+            });
+        }
+
+        var signup = document.getElementById("signup");
+        if (signup) {
+            signup.addEventListener("click", function () {
+                window.location.href = "./login-create.html";
             });
         }
     </script>

@@ -3,89 +3,76 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
-    <title>Toggle Switch Example</title>
+    <title>Settings</title>
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./settings.css" />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap"
-    />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" />
     <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
 
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
+        .wrapper {
+            width: 90%;
+            height: 90%;
+            margin: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
 
-.wrapper {
-  width: 90%;
-  height: 90%;
-  margin: auto;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+        .toggle1 {
+            width: 54px;
+            position: relative;
+            height: 26px;
+            cursor: pointer;
+            background-color: #ccc;
+            border-radius: 26px;
+            transition: background-color 0.3s;
+        }
 
-      .toggle1 {
-        width: 54px;
-        position: relative;
-        height: 26px;
-        cursor: pointer;
-        background-color: #ccc;
-        border-radius: 26px;
-        transition: background-color 0.3s;
-      }
+        .toggle-child {
+            position: absolute;
+            border-radius: 50%;
+            width: 26px;
+            height: 26px;
+            background-color: var(--primary-1);
+            transition: left 0.3s;
+            left: 0;
+        }
 
-      .toggle-child {
-        position: absolute;
-        border-radius: 50%;
-        width: 26px;
-        height: 26px;
-        background-color: var(--primary-1);
-        transition: left 0.3s;
-        left: 0;
-      }
+        .elevation-3 {
+            position: absolute;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            background-color: var(--neutral-white);
+            box-shadow: var(--shadow-3);
+            transition: left 0.3s;
+            left: 4px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
 
-      .elevation-3 {
-        position: absolute;
-        border-radius: 50%;
-        width: 16px;
-        height: 16px;
-        background-color: var(--neutral-white);
-        box-shadow: var(--shadow-3);
-        transition: left 0.3s;
-        left: 4px;
-        top: 50%;
-        transform: translateY(-50%);
-      }
+        .toggle.active .toggle-child {
+            left: 26px;
+        }
 
-      .toggle.active .toggle-child {
-        left: 26px;
-      }
+        .toggle.active .elevation-3 {
+            left: 30px;
+        }
 
-      .toggle.active .elevation-3 {
-        left: 30px;
-      }
-
-      .toggle.active .toggle1 {
-        background-color: var(--primary-1);
-      }
+        .toggle.active .toggle1 {
+            background-color: var(--primary-1);
+        }
     </style>
 </head>
 <body>
@@ -129,12 +116,7 @@ html, body {
                     <div class="button2">
                         <img class="icons" alt="" src="./public/icons2.svg" />
                         <div class="button1">Button</div>
-                        <img
-                            class="icons1"
-                            alt=""
-                            src="./public/icons3.svg"
-                            id="icons1"
-                        />
+                        <img class="icons1" alt="" src="./public/icons3.svg" id="icons1" />
                     </div>
                 </div>
                 <div class="account-information4">
@@ -150,12 +132,7 @@ html, body {
             <div class="settings7">Settings</div>
             <div class="name2"></div>
             <div class="extra-inner"></div>
-            <img
-                class="profile-icon2"
-                alt=""
-                src="./public/profile@2x.png"
-                id="profileIcon"
-            />
+            <img class="profile-icon2" alt="" src="./public/profile@2x.png" id="profileIcon" />
         </div>
         <div class="sidebar2">
             <div class="background2"></div>
@@ -182,32 +159,10 @@ html, body {
                 <div class="dashboard6">Dashboard</div>
                 <img class="dashboard-inner" alt="" src="./public/group-21.svg" />
             </div>
-            <img
-                class="header-icon2"
-                alt=""
-                src="./public/header@2x.png"
-                id="headerImage"
-            />
+            <img class="header-icon2" alt="" src="./public/header@2x.png" id="headerImage" />
         </div>
     </div>
     <script>
-
-      
-
-      // Function to display the student ID in the welcome message
-function displayStudentID() {
-    var studentID = localStorage.getItem("studentID");
-    if (studentID) {
-        var welcomeMessage = document.querySelector('.name2');
-        if (welcomeMessage) {
-            welcomeMessage.textContent = "Welcome, " + studentID + "!";
-        }
-    }
-}
-
-// Call the function to display the student ID when the page loads
-document.addEventListener("DOMContentLoaded", displayStudentID);
-
         function displayStudentID() {
             var studentID = localStorage.getItem("studentID");
             if (studentID) {

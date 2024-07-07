@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="login-create.css">
+    <title>ADNU PAY</title>
+    <style>
+        .underline {
+            text-decoration: underline;
+            cursor: pointer; /* Makes it look clickable */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img src="public/login@2x.png" alt="ADNU Logo" class="logo">
+        </div>
+        <div class="right-side">
+            <img src="public/logo@2x.png" alt="Logo Above Login" class="logo-above-login">
+            <div class="form-container">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Name">
+                </div>
+                <div class="form-group">
+                    <input type="number" id="studentID" placeholder="Student ID">
+                </div>
+                <div class="form-group" style="width: 38%; float: left;">
+                    <input type="email" id="gbox" placeholder="Example" style="width: auto;">
+                </div>
+                <div class="form-group" style="width: 46%; float: right;">
+                    <input type="email" id="g@" placeholder="@gbox.adnu.edu.ph" readonly style="width: auto;">
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password">
+                </div>
+                <button class="login-button" id="createAccountButton">CREATE ACCOUNT</button>
+                <div class="or">
+                    <div class="or-line"></div>
+                    <div class="or-text">OR</div>
+                    <div class="or-line"></div>
+                </div>
+                <button class="google-button" id="connectWithStudentID">Connect with Student ID</button>
+            </div>
+            <div class="need-assistance">Already have an account? <span class="underline" id="signin">Sign in</span></div>
+        </div>
+    </div>
+    <script>
+        function getRandomValue(min, max) {
+            return (Math.random() * (max - min) + min).toFixed(2);
+        }
+
+        document.addEventListener('wheel', function(event) {
+            if (document.activeElement.type === 'number') {
+                document.activeElement.blur();
+            }
+        });
+
+        var createAccountButton = document.getElementById("createAccountButton");
+        if (createAccountButton) {
+            createAccountButton.addEventListener("click", function (e) {
+                var name = document.getElementById("name").value;
+                var studentID = document.getElementById("studentID").value;
+                var gbox = document.getElementById("gbox").value;
+                var password = document.getElementById("password").value;
+
+                if (name && studentID && gbox && password) {
+                    var exam = getRandomValue(10000, 15000);
+                    var payment = getRandomValue(30000, 40000);
+                    var tuition = getRandomValue(30000, 50000);
+
+                    var email = gbox + "@gbox.adnu.edu.ph";
+
+                    localStorage.setItem("name", name);
+                    localStorage.setItem("studentID", studentID);
+                    localStorage.setItem("gbox", email);
+                    localStorage.setItem("password", password);
+                    localStorage.setItem("exam", parseFloat(exam).toFixed(2));
+                    localStorage.setItem("payment", parseFloat(payment).toFixed(2));
+                    localStorage.setItem("tuition", parseFloat(tuition).toFixed(2));
+
+                    window.location.href = "./login-account.html";
+                } else {
+                    this.classList.add("invalid");
+                    setTimeout(() => {
+                        this.classList.remove("invalid");
+                    }, 2000);
+                    e.preventDefault();
+                }
+            });
+        }
+
+        var connectWithStudentID = document.getElementById("connectWithStudentID");
+        if (connectWithStudentID) {
+            connectWithStudentID.addEventListener("click", function (e) {
+                window.location.href = "./login-page.html";
+            });
+        }
+
+        var signin = document.getElementById("signin");
+        if (signin) {
+            signin.addEventListener("click", function () {
+                window.location.href = "./login-account.html";
+            });
+        }
+    </script>
+</body>
+</html>

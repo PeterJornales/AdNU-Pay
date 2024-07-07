@@ -743,15 +743,6 @@
 }
 
 
-html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-}
-
 .dashboard21 {
   display: flex;
   justify-content: center;
@@ -770,5 +761,6 @@ html, body {
 
 html, body {
   height: 105%; /* Ensure the body takes the full height of the viewport */
+  overflow: hidden;
 }
 

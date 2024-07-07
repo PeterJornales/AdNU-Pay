@@ -55,7 +55,8 @@
                 type="number"
                 class="student-number-input input-with-padding"
                 placeholder="Student Number"
-                oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+                id="onsiteStudentNumber"
+                readonly
               />
             </div>
             <div class="amount4">
@@ -63,16 +64,17 @@
                 type="text"
                 class="amount-input input-with-padding"
                 placeholder="Amount"
+                id="onsiteAmount"
+                oninput="validateAmount('onsiteAmount')"
               />
             </div>
           </div>
           <div class="payment22">
-            <select class="payment-dropdown input-with-padding">
+            <select class="payment-dropdown input-with-padding" id="onsitePaymentFor">
               <option value="">Payment for</option>
               <option value="Tuition">Tuition</option>
               <option value="Uniform">Uniform</option>
-              <option value="Fees">Fees</option>
-              <option value="Identification Card">Identification Card</option>
+              <option value="Fees">Other Fees</option>
             </select>
           </div>
           <div class="student-name1">
@@ -80,6 +82,8 @@
               type="text"
               class="student-name-input input-with-padding"
               placeholder="Student Name"
+              id="onsiteStudentNameInput"
+              readonly
             />
           </div>
           <b class="onsite">Onsite</b>
@@ -102,6 +106,8 @@
               type="text"
               class="student-name-input input-with-padding"
               placeholder="Student Name"
+              id="offsiteStudentNameInput"
+              readonly
             />
           </div>
           <div class="form-amount1">
@@ -109,7 +115,8 @@
               type="number"
               class="student-number-input input-with-padding"
               placeholder="Student Number"
-              oninput="this.value=this.value.replace(/[^0-9]/g,'');"
+              id="offsiteStudentNumber"
+              readonly
             />
           </div>
           <div class="form-amount2">
@@ -117,7 +124,14 @@
               type="text"
               class="amount-input input-with-padding"
               placeholder="Amount"
+              id="offsiteAmount"
+              oninput="validateAmount('offsiteAmount')"
             />
+          </div>
+          <div class="payment22">
+            <select class="payment-dropdown input-with-padding" id="offsitePaymentFor">
+              <option value="Tuition">Tuition</option>
+            </select>
           </div>
           <b class="offsite1">Online</b>
           <div class="process-button1" id="proceedOnlineButton">
@@ -162,28 +176,50 @@
   </div>
 
   <script>
-
-    // Function to display the student ID in the welcome message
-function displayStudentID() {
-    var studentID = localStorage.getItem("studentID");
-    if (studentID) {
-        var welcomeMessage = document.querySelector('.welcome4');
-        if (welcomeMessage) {
-            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+    function displayStudentInfo() {
+      var studentID = localStorage.getItem("studentID");
+      var studentName = localStorage.getItem("name");
+      if (studentID) {
+        var onsiteStudentNumberInput = document.getElementById("onsiteStudentNumber");
+        var offsiteStudentNumberInput = document.getElementById("offsiteStudentNumber");
+        if (onsiteStudentNumberInput) {
+          onsiteStudentNumberInput.value = studentID;
         }
+        if (offsiteStudentNumberInput) {
+          offsiteStudentNumberInput.value = studentID;
+        }
+      }
+      if (studentName) {
+        var onsiteStudentNameInput = document.getElementById("onsiteStudentNameInput");
+        var offsiteStudentNameInput = document.getElementById("offsiteStudentNameInput");
+        if (onsiteStudentNameInput) {
+          onsiteStudentNameInput.value = studentName;
+        }
+        if (offsiteStudentNameInput) {
+          offsiteStudentNameInput.value = studentName;
+        }
+      }
     }
-}
 
-// Call the function to display the student ID when the page loads
-document.addEventListener("DOMContentLoaded", displayStudentID);
+    function validateAmount(inputId) {
+      var tuitionBalance = parseFloat(localStorage.getItem("tuition")) || 0;
+      var amountInput = document.getElementById(inputId);
+      var amount = parseFloat(amountInput.value) || 0;
 
+      if (amount > tuitionBalance) {
+        amountInput.value = tuitionBalance;
+      }
+    }
 
-    // JavaScript to prevent scrolling in number inputs
-document.addEventListener('wheel', function(event) {
-  if (document.activeElement.type === 'number') {
-    document.activeElement.blur();
-  }
-});
+    document.addEventListener("DOMContentLoaded", function() {
+      displayStudentInfo();
+    });
+
+    document.addEventListener('wheel', function(event) {
+      if (document.activeElement.type === 'number') {
+        document.activeElement.blur();
+      }
+    });
 
     var profileIcon = document.getElementById("profileIcon");
     if (profileIcon) {
@@ -229,13 +265,15 @@ document.addEventListener('wheel', function(event) {
       proceedOnlineButton.addEventListener("click", function (e) {
         const studentNumber = document.querySelector(".offsite .student-number-input").value;
         const amount = document.querySelector(".offsite .amount-input").value;
+        const paymentFor = document.querySelector(".offsite .payment-dropdown").value;
         const studentName = document.querySelector(".offsite .student-name-input").value;
 
-        if (studentNumber && amount && studentName) {
+        if (studentNumber && amount && paymentFor && studentName) {
           const date = new Date().toLocaleString();
 
           localStorage.setItem("studentNumber", studentNumber);
           localStorage.setItem("amount", amount);
+          localStorage.setItem("paymentFor", paymentFor);
           localStorage.setItem("studentName", studentName);
           localStorage.setItem("date", date);
 
@@ -249,17 +287,9 @@ document.addEventListener('wheel', function(event) {
       });
     }
 
-    // Ensuring both the container and the text are clickable
     if (proceedOnlineText) {
       proceedOnlineText.addEventListener("click", function (e) {
         proceedOnlineButton.click();
-      });
-    }
-
-    var rectangle = document.getElementById("rectangle");
-    if (rectangle) {
-      rectangle.addEventListener("click", function (e) {
-        window.location.href = "./payment-visa.html";
       });
     }
 
@@ -274,6 +304,13 @@ document.addEventListener('wheel', function(event) {
     if (transactionContainer) {
       transactionContainer.addEventListener("click", function (e) {
         window.location.href = "./transaction.html";
+      });
+    }
+
+    var paymentContainer = document.getElementById("paymentContainer");
+    if (paymentContainer) {
+      paymentContainer.addEventListener("click", function (e) {
+        window.location.href = "./payment.html";
       });
     }
 

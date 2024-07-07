@@ -42,7 +42,7 @@
   left: 98px;
   display: flex;
   align-items: center;
-  width: 140px;
+  width: 500px;
   height: 70px;
 }
 .name1 {
@@ -450,4 +450,4 @@
   font-size: var(--font-size-6xl);
   color: var(--neutral-white);
   font-family: var(--text-regular-2);
-} 
+}
