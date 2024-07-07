@@ -99,6 +99,10 @@
               // Deduct the amount from the outstanding balance (examBalance)
               if (amountPaid > 0) {
 
+                  if(amountPaid >= examBalance) {
+                    examBalance = 0;
+                  }
+
                   // Deduct the amount from the total balance (tuitionBalance)
                   if (amountPaid <= tuitionBalance) {
                       tuitionBalance -= amountPaid;
