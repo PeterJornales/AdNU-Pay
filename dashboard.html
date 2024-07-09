@@ -1,204 +1,233 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="initial-scale=1, width=device-width" />
-  <link rel="stylesheet" href="./global.css" />
-  <link rel="stylesheet" href="./dashboard.css" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" />
-</head>
-<body>
-  <div class="dashboard21">
-    <div class="dashboard-container">
-      <img class="grad-icon10" alt="" src="./public/grad.svg" />
-      <div class="dashboard-container-child"></div>
-      <div class="dashboard22">
-        <div class="bar">
-          <div class="expenses">
-            <div class="expenses-child"></div>
-            <b class="b" id="outstandingBalance"></b>
-            <div class="downward-trend"></div>
-            <div class="recommended-payment">Outstanding Balance</div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+    <link rel="stylesheet" href="./global.css" />
+    <link rel="stylesheet" href="./dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
+    <div class="dashboard21">
+      <div class="dashboard-container">
+        <img class="grad-icon10" alt="" src="./public/grad.svg" />
+        <div class="dashboard-container-child"></div>
+        <div class="dashboard22">
+          <div class="bar">
+            <div class="expenses">
+              <div class="expenses-child"></div>
+              <b class="b" id="outstandingBalance"></b>
+              <div class="downward-trend"></div>
+              <div class="recommended-payment">Outstanding Balance</div>
+            </div>
+            <div class="expenses1">
+              <div class="discount-earned">Amount Paid</div>
+              <div class="expenses-child"></div>
+              <b class="b" id="amountPaid"></b>
+              <div class="expenses-inner"></div>
+              <div class="downward-trend"></div>
+            </div>
+            <div class="expenses2">
+              <div class="expenses-child"></div>
+              <div class="expenses3"></div>
+              <b class="b2" id="totalBalance"></b>
+              <div class="downward-trend"></div>
+              <div class="recommended-payment">Total Balance</div>
+            </div>
+            <div class="expenses4">
+              <div class="downward-trend3"></div>
+            </div>
           </div>
-          <div class="expenses1">
-            <div class="discount-earned">Amount Paid</div>
-            <div class="expenses-child"></div>
-            <b class="b" id="amountPaid"></b>
-            <div class="expenses-inner"></div>
-            <div class="downward-trend"></div>
+          <div class="profile">
+            <img class="profile-child" alt="" src="./public/ellipse-3@2x.png" />
+            <div class="account-name">
+              <div class="lumabi-karl-e" id="studentName"></div>
+              <div class="div14" id="studentID"></div>
+              <div class="bsit">2-BSIT</div>
+            </div>
           </div>
-          <div class="expenses2">
-            <div class="expenses-child"></div>
-            <div class="expenses3"></div>
-            <b class="b2" id="totalBalance"></b>
-            <div class="downward-trend"></div>
-            <div class="recommended-payment">Total Balance</div>
-          </div>
-          <div class="expenses4">
-            <div class="downward-trend3"></div>
+          <div class="files-in-date">
+            <div class="files-in-time">
+              <div class="files-in-time-child"></div>
+              <img
+                class="files-in-time-item"
+                alt=""
+                src="./public/vector-428.svg"
+              />
+              <div class="files-in-time-inner"></div>
+              <div class="files-in-time-child1"></div>
+              <div class="files-in-time-child2"></div>
+              <div class="files-in-time-child3"></div>
+              <div class="files-in-time-child4"></div>
+              <div class="files-in-time-child5"></div>
+              <div class="div15">0</div>
+              <div class="jan">Jan</div>
+              <div class="feb">Feb</div>
+              <div class="mar">Mar</div>
+              <div class="apr">Apr</div>
+              <div class="may">May</div>
+              <div class="jun">Jun</div>
+              <div class="jul">Jul</div>
+              <div class="aug">Aug</div>
+              <div class="sep">Sep</div>
+              <div class="oct">Oct</div>
+              <div class="nov">Nov</div>
+              <div class="dec">Dec</div>
+              <div class="k">1K</div>
+              <div class="k1">2K</div>
+              <div class="k2">3K</div>
+              <div class="k3">4K</div>
+              <div class="k4">5K</div>
+              <div class="files-in-date1">Files in date</div>
+              <div class="ellipse-div"></div>
+              <b class="oct1">
+                <span class="oct-txt">
+                  <p class="p">₱4,589</p>
+                  <p class="p">OCT</p>
+                </span>
+              </b>
+            </div>
+            <img class="vector-icon7" alt="" src="./public/vector3.svg" />
           </div>
         </div>
-        <div class="profile">
-          <img class="profile-child" alt="" src="./public/ellipse-3@2x.png" />
-          <div class="account-name">
-            <div class="lumabi-karl-e" id="studentName"></div>
-            <div class="div14" id="studentID"></div>
-            <div class="bsit">2-BSIT</div>
-          </div>
-        </div>
-        <div class="files-in-date">
-          <div class="files-in-time">
-            <div class="files-in-time-child"></div>
-            <img class="files-in-time-item" alt="" src="./public/vector-428.svg" />
-            <div class="files-in-time-inner"></div>
-            <div class="files-in-time-child1"></div>
-            <div class="files-in-time-child2"></div>
-            <div class="files-in-time-child3"></div>
-            <div class="files-in-time-child4"></div>
-            <div class="files-in-time-child5"></div>
-            <div class="div15">0</div>
-            <div class="jan">Jan</div>
-            <div class="feb">Feb</div>
-            <div class="mar">Mar</div>
-            <div class="apr">Apr</div>
-            <div class="may">May</div>
-            <div class="jun">Jun</div>
-            <div class="jul">Jul</div>
-            <div class="aug">Aug</div>
-            <div class="sep">Sep</div>
-            <div class="oct">Oct</div>
-            <div class="nov">Nov</div>
-            <div class="dec">Dec</div>
-            <div class="k">1K</div>
-            <div class="k1">2K</div>
-            <div class="k2">3K</div>
-            <div class="k3">4K</div>
-            <div class="k4">5K</div>
-            <div class="files-in-date1">Files in date</div>
-            <div class="ellipse-div"></div>
-            <b class="oct1">
-              <span class="oct-txt">
-                <p class="p">₱4,589</p>
-                <p class="p">OCT</p>
-              </span>
-            </b>
-          </div>
-          <img class="vector-icon7" alt="" src="./public/vector3.svg" />
+        <div class="extra10">
+          <div class="welcome5" id="welcomeMessage"></div>
+          <img
+            class="profile-icon10"
+            alt=""
+            src="./public/profile@2x.png"
+            id="profileIcon"
+          />
+          <div class="extra-child7"></div>
+          <div class="dashboard23">Dashboard</div>
         </div>
       </div>
-      <div class="extra10">
-        <div class="welcome5" id="welcomeMessage"></div>
-        <img class="profile-icon10" alt="" src="./public/profile@2x.png" id="profileIcon" />
-        <div class="extra-child7"></div>
-        <div class="dashboard23">Dashboard</div>
+      <div class="sidebar10">
+        <div class="background10"></div>
+        <div class="adnupay-ver01beta10">AdNUPay ver0.1beta</div>
+        <div class="hover10"></div>
+        <div class="settings27" id="settingsContainer">
+          <div class="settings28">Settings</div>
+          <div class="rectangle-parent7">
+            <div class="group-child40"></div>
+            <div class="group-child41"></div>
+            <div class="group-child42"></div>
+            <div class="group-child43"></div>
+          </div>
+        </div>
+        <div class="transaction22" id="transactionContainer">
+          <div class="transaction23">Transaction</div>
+          <img class="transaction-child7" alt="" src="./public/group-4.svg" />
+        </div>
+        <div class="payment25" id="paymentContainer">
+          <div class="payment26">Payment</div>
+          <img class="payment-child9" alt="" src="./public/group-3.svg" />
+        </div>
+        <div class="dashboard24">
+          <div class="dashboard25">Dashboard</div>
+          <img class="dashboard-child8" alt="" src="./public/group-22.svg" />
+        </div>
+        <img class="header-icon10" alt="" src="./public/header@2x.png" />
       </div>
     </div>
-    <div class="sidebar10">
-      <div class="background10"></div>
-      <div class="adnupay-ver01beta10">AdNUPay ver0.1beta</div>
-      <div class="hover10"></div>
-      <div class="settings27" id="settingsContainer">
-        <div class="settings28">Settings</div>
-        <div class="rectangle-parent7">
-          <div class="group-child40"></div>
-          <div class="group-child41"></div>
-          <div class="group-child42"></div>
-          <div class="group-child43"></div>
-        </div>
-      </div>
-      <div class="transaction22" id="transactionContainer">
-        <div class="transaction23">Transaction</div>
-        <img class="transaction-child7" alt="" src="./public/group-4.svg" />
-      </div>
-      <div class="payment25" id="paymentContainer">
-        <div class="payment26">Payment</div>
-        <img class="payment-child9" alt="" src="./public/group-3.svg" />
-      </div>
-      <div class="dashboard24">
-        <div class="dashboard25">Dashboard</div>
-        <img class="dashboard-child8" alt="" src="./public/group-22.svg" />
-      </div>
-      <img class="header-icon10" alt="" src="./public/header@2x.png" />
-    </div>
-  </div>
 
-  <script>
+    <script>
+      function formatNumberWithCommas(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+      }
 
-    function displayStudentInfo() {
+      function displayStudentInfo() {
         var studentID = localStorage.getItem("studentID");
         var studentName = localStorage.getItem("name");
         var exam = parseFloat(localStorage.getItem("exam")) || 0;
         var payment = parseFloat(localStorage.getItem("payment")) || 0;
         var tuition = parseFloat(localStorage.getItem("tuition")) || 0;
 
-        var totalBalance =  tuition;
+        var totalBalance = tuition;
 
         if (studentID) {
-            var studentIDElement = document.getElementById("studentID");
-            var welcomeMessage = document.getElementById("welcomeMessage");
+          var studentIDElement = document.getElementById("studentID");
+          var welcomeMessage = document.getElementById("welcomeMessage");
 
-            if (studentIDElement) {
-                studentIDElement.textContent = studentID;
-            }
-            if (welcomeMessage) {
-                welcomeMessage.textContent = "Welcome, " + studentID + "!";
-            }
+          if (studentIDElement) {
+            studentIDElement.textContent = studentID;
+          }
+          if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
+          }
         }
 
         if (studentName) {
-            var studentNameElement = document.getElementById("studentName");
-            if (studentNameElement) {
-                studentNameElement.textContent = studentName;
-            }
+          var studentNameElement = document.getElementById("studentName");
+          if (studentNameElement) {
+            studentNameElement.textContent = studentName;
+          }
         }
 
-        document.getElementById('outstandingBalance').textContent = "₱" + exam.toFixed(2);
-        document.getElementById('amountPaid').textContent = "₱" + payment.toFixed(2);
-        document.getElementById('totalBalance').textContent = "₱" + totalBalance.toFixed(2);
-    }
+        document.getElementById("outstandingBalance").textContent =
+          "₱" + formatNumberWithCommas(exam.toFixed(2));
+        document.getElementById("amountPaid").textContent =
+          "₱" + formatNumberWithCommas(payment.toFixed(2));
+        document.getElementById("totalBalance").textContent =
+          "₱" + formatNumberWithCommas(totalBalance.toFixed(2));
+      }
 
-    // Call the function to display the student info when the page loads
-    document.addEventListener("DOMContentLoaded", function() {
+      // Call the function to display the student info when the page loads
+      document.addEventListener("DOMContentLoaded", function () {
         displayStudentInfo();
-    });
+      });
 
-    // JavaScript to prevent scrolling in number inputs
-    document.addEventListener('wheel', function(event) {
-        if (document.activeElement.type === 'number') {
-            document.activeElement.blur();
+      // JavaScript to prevent scrolling in number inputs
+      document.addEventListener("wheel", function (event) {
+        if (document.activeElement.type === "number") {
+          document.activeElement.blur();
         }
-    });
+      });
 
-    var profileIcon = document.getElementById("profileIcon");
-    if (profileIcon) {
+      var profileIcon = document.getElementById("profileIcon");
+      if (profileIcon) {
         profileIcon.addEventListener("click", function (e) {
-            window.location.href = "./account-information.html";
+          window.location.href = "./account-information.html";
         });
-    }
+      }
 
-    var settingsContainer = document.getElementById("settingsContainer");
-    if (settingsContainer) {
+      var settingsContainer = document.getElementById("settingsContainer");
+      if (settingsContainer) {
         settingsContainer.addEventListener("click", function (e) {
-            window.location.href = "./settings.html";
+          window.location.href = "./settings.html";
         });
-    }
+      }
 
-    var transactionContainer = document.getElementById("transactionContainer");
-    if (transactionContainer) {
+      var transactionContainer = document.getElementById(
+        "transactionContainer"
+      );
+      if (transactionContainer) {
         transactionContainer.addEventListener("click", function (e) {
-            window.location.href = "./transaction.html";
+          window.location.href = "./transaction.html";
         });
-    }
+      }
 
-    var paymentContainer = document.getElementById("paymentContainer");
-    if (paymentContainer) {
+      var paymentContainer = document.getElementById("paymentContainer");
+      if (paymentContainer) {
         paymentContainer.addEventListener("click", function (e) {
-            window.location.href = "./payment.html";
+          window.location.href = "./payment.html";
         });
-    }
-  </script>
-</body>
+      }
+    </script>
+  </body>
 </html>

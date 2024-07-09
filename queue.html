@@ -1,24 +1,41 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
     <link rel="stylesheet" href="./global.css" />
     <link rel="stylesheet" href="./queue.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" />
-</head>
-<body>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;500;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap"
+    />
+  </head>
+  <body>
     <div class="queue">
       <div class="queue-confirmation">
         <img class="grad-icon7" alt="" src="./public/grad.svg" />
 
         <div class="extra7">
           <div class="payment14">Payment</div>
-          <img class="profile-icon7" alt="" src="./public/profile@2x.png" id="profileIcon" />
+          <img
+            class="profile-icon7"
+            alt=""
+            src="./public/profile@2x.png"
+            id="profileIcon"
+          />
           <div class="welcome2"></div>
           <div class="extra-child4"></div>
         </div>
@@ -56,7 +73,11 @@
         <div class="queue-number">Queue Number</div>
         <b class="queue-confirmation2">Queue Confirmation</b>
         <div class="queue-confirmation-child"></div>
-        <img class="queue-confirmation-item" alt="" src="./public/vector-429.svg" />
+        <img
+          class="queue-confirmation-item"
+          alt=""
+          src="./public/vector-429.svg"
+        />
       </div>
       <div class="sidebar7">
         <div class="background7"></div>
@@ -83,75 +104,94 @@
           <div class="dashboard16">Dashboard</div>
           <img class="dashboard-child5" alt="" src="./public/group-21.svg" />
         </div>
-        <img class="header-icon7" alt="" src="./public/header@2x.png" id="headerImage" />
+        <img
+          class="header-icon7"
+          alt=""
+          src="./public/header@2x.png"
+          id="headerImage"
+        />
       </div>
     </div>
 
     <script>
-      var dONEText = document.getElementById("dONEText");
-  if (dONEText) {
-    dONEText.addEventListener("click", function (e) {
-      var amountPaid = parseFloat(localStorage.getItem("amount"));
-      var tuitionBalance = parseFloat(localStorage.getItem("tuition"));
-      var examBalance = parseFloat(localStorage.getItem("exam"));
-      var totalPayment = parseFloat(localStorage.getItem("payment")) || 0;
-
-      if (amountPaid > 0) {
-        if (amountPaid >= examBalance) {
-          examBalance = 0;
-        }
-
-        if (amountPaid <= examBalance) {
-          examBalance -= amountPaid;
-        }
-
-        if (amountPaid <= tuitionBalance) {
-          tuitionBalance -= amountPaid;
-        } else {
-          alert("Amount exceeds the total balance.");
-          return;
-        }
-
-        totalPayment += amountPaid;
-
-        localStorage.setItem("tuition", tuitionBalance.toFixed(2));
-        localStorage.setItem("exam", examBalance.toFixed(2));
-        localStorage.setItem("payment", totalPayment.toFixed(2));
-
-        // Store the transaction details
-        localStorage.setItem("transactionType", "cash");
-        localStorage.setItem("transactionDate", localStorage.getItem("date"));
-        localStorage.setItem("transactionStatus", "completed");
-        localStorage.setItem("transactionAmount", amountPaid.toFixed(2));
-
-        alert("Payment is being processed. You will be redirected to the dashboard shortly.");
-
-        setTimeout(function() {
-          window.location.href = "./dashboard.html";
-        }, 300); // 15 seconds delay (15000 milliseconds)
-      } else {
-        alert("Invalid amount paid.");
+      function formatNumberWithCommas(number) {
+        return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
-    });
-  }
+
+      var dONEText = document.getElementById("dONEText");
+      if (dONEText) {
+        dONEText.addEventListener("click", function (e) {
+          var amountPaid = parseFloat(localStorage.getItem("amount"));
+          var tuitionBalance = parseFloat(localStorage.getItem("tuition"));
+          var examBalance = parseFloat(localStorage.getItem("exam"));
+          var totalPayment = parseFloat(localStorage.getItem("payment")) || 0;
+
+          if (amountPaid > 0) {
+            if (amountPaid >= examBalance) {
+              examBalance = 0;
+            }
+
+            if (amountPaid <= examBalance) {
+              examBalance -= amountPaid;
+            }
+
+            if (amountPaid <= tuitionBalance) {
+              tuitionBalance -= amountPaid;
+            } else {
+              alert("Amount exceeds the total balance.");
+              return;
+            }
+
+            totalPayment += amountPaid;
+
+            localStorage.setItem("tuition", tuitionBalance.toFixed(2));
+            localStorage.setItem("exam", examBalance.toFixed(2));
+            localStorage.setItem("payment", totalPayment.toFixed(2));
+
+            // Store the transaction details
+            localStorage.setItem("transactionType", "Cash");
+            localStorage.setItem(
+              "transactionDate",
+              localStorage.getItem("date")
+            );
+            localStorage.setItem("transactionStatus", "Completed");
+            localStorage.setItem("transactionAmount", amountPaid.toFixed(2));
+
+            alert(
+              "Payment is being processed. You will be redirected to the dashboard shortly."
+            );
+
+            setTimeout(function () {
+              window.location.href = "./dashboard.html";
+            }, 300); // 15 seconds delay (15000 milliseconds)
+          } else {
+            alert("Invalid amount paid.");
+          }
+        });
+      }
 
       function displayStudentID() {
-          var studentID = localStorage.getItem("studentID");
-          if (studentID) {
-              var welcomeMessage = document.querySelector('.welcome2');
-              if (welcomeMessage) {
-                  welcomeMessage.textContent = "Welcome, " + studentID + "!";
-              }
+        var studentID = localStorage.getItem("studentID");
+        if (studentID) {
+          var welcomeMessage = document.querySelector(".welcome2");
+          if (welcomeMessage) {
+            welcomeMessage.textContent = "Welcome, " + studentID + "!";
           }
+        }
       }
 
       document.addEventListener("DOMContentLoaded", displayStudentID);
 
       document.addEventListener("DOMContentLoaded", function () {
-        document.getElementById("amount").textContent = "₱ " + parseFloat(localStorage.getItem("amount")).toFixed(2);
-        document.getElementById("date").textContent = localStorage.getItem("date");
-        document.getElementById("paymentFor").textContent = localStorage.getItem("paymentFor");
-        document.getElementById("studentID").textContent = localStorage.getItem("studentID");
+        var amountPaid = parseFloat(localStorage.getItem("amount"));
+        document.getElementById("amount").textContent =
+          "₱ " + formatNumberWithCommas(amountPaid.toFixed(2));
+        document.getElementById("date").textContent =
+          localStorage.getItem("date");
+        document.getElementById("paymentFor").textContent =
+          localStorage.getItem("paymentFor");
+        document.getElementById("studentID").textContent =
+          localStorage.getItem("studentID");
       });
 
       var profileIcon = document.getElementById("profileIcon");
@@ -168,7 +208,9 @@
         });
       }
 
-      var transactionContainer = document.getElementById("transactionContainer");
+      var transactionContainer = document.getElementById(
+        "transactionContainer"
+      );
       if (transactionContainer) {
         transactionContainer.addEventListener("click", function (e) {
           window.location.href = "./transaction.html";
@@ -196,7 +238,7 @@
         });
       }
 
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     </script>
-</body>
+  </body>
 </html>
