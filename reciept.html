@@ -209,6 +209,8 @@ document.addEventListener("DOMContentLoaded", displayStudentID);
     document.getElementById("paymentMethod").textContent = localStorage.getItem("paymentMethod");
     document.getElementById("paymentDate").textContent = localStorage.getItem("date");
     document.getElementById("totalPayment").textContent = "₱ " + localStorage.getItem("amount"); // Kept amount for total payment
+
+    document.body.style.overflow = 'hidden';
   </script>
   
 </body>

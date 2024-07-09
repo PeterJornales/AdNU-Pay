@@ -89,52 +89,51 @@
 
     <script>
       var dONEText = document.getElementById("dONEText");
-      if (dONEText) {
-          dONEText.addEventListener("click", function (e) {
-              var amountPaid = parseFloat(localStorage.getItem("amount"));
-              var tuitionBalance = parseFloat(localStorage.getItem("tuition"));
-              var examBalance = parseFloat(localStorage.getItem("exam"));
-              var totalPayment = parseFloat(localStorage.getItem("payment")) || 0;
+  if (dONEText) {
+    dONEText.addEventListener("click", function (e) {
+      var amountPaid = parseFloat(localStorage.getItem("amount"));
+      var tuitionBalance = parseFloat(localStorage.getItem("tuition"));
+      var examBalance = parseFloat(localStorage.getItem("exam"));
+      var totalPayment = parseFloat(localStorage.getItem("payment")) || 0;
 
-              // Deduct the amount from the outstanding balance (examBalance)
-              if (amountPaid > 0) {
+      if (amountPaid > 0) {
+        if (amountPaid >= examBalance) {
+          examBalance = 0;
+        }
 
-                  if(amountPaid >= examBalance) {
-                    examBalance = 0;
-                  }
+        if (amountPaid <= examBalance) {
+          examBalance -= amountPaid;
+        }
 
-                  if(amountPaid <= examBalance) {
-                    examBalance -= amountPaid;
-                  }
+        if (amountPaid <= tuitionBalance) {
+          tuitionBalance -= amountPaid;
+        } else {
+          alert("Amount exceeds the total balance.");
+          return;
+        }
 
-                  // Deduct the amount from the total balance (tuitionBalance)
-                  if (amountPaid <= tuitionBalance) {
-                      tuitionBalance -= amountPaid;
-                  } else {
-                      alert("Amount exceeds the total balance.");
-                      return;
-                  }
+        totalPayment += amountPaid;
 
-                  // Increase the total amount paid
-                  totalPayment += amountPaid;
+        localStorage.setItem("tuition", tuitionBalance.toFixed(2));
+        localStorage.setItem("exam", examBalance.toFixed(2));
+        localStorage.setItem("payment", totalPayment.toFixed(2));
 
-                  // Update the values in localStorage with two decimal places
-                  localStorage.setItem("tuition", tuitionBalance.toFixed(2));
-                  localStorage.setItem("exam", examBalance.toFixed(2));
-                  localStorage.setItem("payment", totalPayment.toFixed(2));
+        // Store the transaction details
+        localStorage.setItem("transactionType", "cash");
+        localStorage.setItem("transactionDate", localStorage.getItem("date"));
+        localStorage.setItem("transactionStatus", "completed");
+        localStorage.setItem("transactionAmount", amountPaid.toFixed(2));
 
-                  // Display a message indicating the payment is being processed
-                  alert("Payment is being processed. You will be redirected to the dashboard shortly.");
+        alert("Payment is being processed. You will be redirected to the dashboard shortly.");
 
-                  // Delay the redirection to the dashboard by 10-20 seconds
-                  setTimeout(function() {
-                      window.location.href = "./dashboard.html";
-                  }, 300); // 15 seconds delay (15000 milliseconds)
-              } else {
-                  alert("Invalid amount paid.");
-              }
-          });
+        setTimeout(function() {
+          window.location.href = "./dashboard.html";
+        }, 300); // 15 seconds delay (15000 milliseconds)
+      } else {
+        alert("Invalid amount paid.");
       }
+    });
+  }
 
       function displayStudentID() {
           var studentID = localStorage.getItem("studentID");
@@ -196,6 +195,8 @@
           window.location.href = "./dashboard.html";
         });
       }
+
+      document.body.style.overflow = 'hidden';
     </script>
 </body>
 </html>

@@ -49,7 +49,7 @@
   left: 0;
   border-radius: var(--br-11xl);
   width: 655px;
-  height: 787px;
+  height: 767px;
 }
 .div12,
 .ref-number {
@@ -161,7 +161,7 @@
 }
 .queue-confirmation3 {
   position: absolute;
-  top: 319px;
+  top: 295px;
   left: 634px;
   width: 655px;
   height: 787px;

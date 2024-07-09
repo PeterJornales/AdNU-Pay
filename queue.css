@@ -50,7 +50,7 @@
   left: 0;
   border-radius: var(--br-11xl);
   width: 655px;
-  height: 787px;
+  height: 730px;
 }
 .div11 {
   width: 211px;
@@ -116,7 +116,7 @@
   gap: var(--gap-xl);
 }
 .done {
-  top: 671px;
+  top: 655px;
   left: 288px;
   font-size: var(--font-size-6xl);
   color: var(--color-palegreen);

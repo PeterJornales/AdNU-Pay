@@ -29,7 +29,7 @@
             <img src="public/logo@2x.png" alt="Logo Above Login" class="logo-above-login">
             <div class="form-container">
                 <div class="form-group">
-                    <input type="text" id="gboxAccount" placeholder="Email">
+                    <input type="text" id="gboxAccount" placeholder="Student Number">
                 </div>
                 <div class="form-group">
                     <input type="password" id="passwordGbox" placeholder="Password">
@@ -41,7 +41,7 @@
                     <div class="or-line"></div>
                 </div>
                 <button class="google-button" id="connectWithStudentID">
-                    Connect with Student ID
+                    Connect with GBox Account
                 </button>
             </div>
             <div id="errorMessage" class="error-message"></div>
@@ -61,10 +61,6 @@
                 var gboxAccount = document.getElementById("gboxAccount").value;
                 var passwordGbox = document.getElementById("passwordGbox").value;
 
-                if (!gboxAccount.includes("@gbox.adnu.edu.ph")) {
-                    alert("Invalid email. Please enter a valid gbox.adnu.edu.ph email.");
-                    return;
-                }
 
                 var storedGbox = localStorage.getItem("gbox");
                 var storedPassword = localStorage.getItem("password");

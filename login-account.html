@@ -11,13 +11,6 @@
             text-decoration: underline;
             cursor: pointer; /* Makes it look clickable */
         }
-        .invalid {
-            border: 1px solid red;
-        }
-        .error-message {
-            color: red;
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
@@ -44,7 +37,6 @@
                     Connect with Student ID
                 </button>
             </div>
-            <div id="errorMessage" class="error-message"></div>
             <div class="need-assistance">Don't have an account yet? <span class="underline" id="signup">Sign up</span></div>
         </div>
     </div>
@@ -58,24 +50,33 @@
         var signInWithGbox = document.getElementById("signInWithGbox");
         if (signInWithGbox) {
             signInWithGbox.addEventListener("click", function (e) {
-                var gboxAccount = document.getElementById("gboxAccount").value;
-                var passwordGbox = document.getElementById("passwordGbox").value;
+                var gboxAccount = document.getElementById("gboxAccount").value.trim();
+                var passwordGbox = document.getElementById("passwordGbox").value.trim();
 
+                // Validate email format
+                if (!gboxAccount.endsWith("@gbox.adnu.edu.ph")) {
+                    alert("Invalid email. Please use '@gbox.adnu.edu.ph'.");
+                    return;
+                }
+
+                // Get stored credentials
                 var storedGbox = localStorage.getItem("gbox");
                 var storedPassword = localStorage.getItem("password");
 
-                // Concatenate the email if not already done
-                var email = gboxAccount.includes("@gbox.adnu.edu.ph") ? gboxAccount : gboxAccount + "@gbox.adnu.edu.ph";
-
-                if (email === storedGbox && passwordGbox === storedPassword) {
-                    window.location.href = "./dashboard.html";
-                } else {
-                    var errorMessage = document.getElementById("errorMessage");
-                    errorMessage.textContent = "Account doesn't exist. Please create an account.";
-                    setTimeout(() => {
-                        errorMessage.textContent = "";
-                    }, 2000);
+                // Check if account exists
+                if (gboxAccount !== storedGbox) {
+                    alert("Account doesn't exist. Please create an account.");
+                    return;
                 }
+
+                // Validate password
+                if (passwordGbox !== storedPassword) {
+                    alert("Invalid password.");
+                    return;
+                }
+
+                // If credentials are correct
+                window.location.href = "./dashboard.html";
             });
         }
 

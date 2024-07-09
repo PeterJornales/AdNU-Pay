@@ -205,6 +205,29 @@
       </div>
     </div>
     <script>
+
+  // Helper function to format numbers with commas
+  function formatNumberWithCommas(number) {
+    return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  }
+
+  document.addEventListener("DOMContentLoaded", function() {
+    var name = "GCash"; // Assuming static name as 'GCash'
+    var type = localStorage.getItem("transactionType");
+    var date = localStorage.getItem("transactionDate");
+    var status = localStorage.getItem("transactionStatus");
+    var amount = localStorage.getItem("transactionAmount");
+
+    if (type && date && status && amount) {
+      document.querySelector(".uid16 .gcash").textContent = name;
+      document.querySelector(".uid16 .tuition-fee").textContent = type;
+      document.querySelector(".uid16 .pm").textContent = date.split(' ')[1];
+      document.querySelector(".uid16 .tue-21-sept").textContent = date.split(' ')[0];
+      document.querySelector(".uid16 .completed").textContent = status;
+      document.querySelector(".uid16 .div4").textContent = `₱${formatNumberWithCommas(amount)}`;
+    }
+  });
+
       var profileIcon = document.getElementById("profileIcon");
       if (profileIcon) {
         profileIcon.addEventListener("click", function (e) {

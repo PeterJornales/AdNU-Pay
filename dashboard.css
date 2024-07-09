@@ -12,7 +12,7 @@
   border-radius: var(--br-11xl);
   background-color: var(--color-gray-600);
   width: 1196px;
-  height: 923px;
+  height: 823px;
 }
 .expenses-child {
   top: 0;
@@ -506,10 +506,10 @@
   height: 253px;
 }
 .files-in-date {
-  top: 422px;
+  top: 382px;
   left: 1px;
   width: 1080px;
-  height: 382px;
+  height: 482px;
   font-size: var(--text-regular-2-size);
   font-family: var(--font-lexend);
 }
