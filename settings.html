@@ -18,16 +18,6 @@
             padding: 0;
         }
 
-        .wrapper {
-            width: 90%;
-            height: 90%;
-            margin: auto;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
 
         .toggle1 {
             width: 54px;
@@ -84,12 +74,7 @@
                     <div class="container-item"></div>
                 </div>
             </div>
-            <div class="icon-log-out">
-                <div class="vector-parent" id="groupContainer">
-                    <img class="rectangle-icon" alt="" src="./public/back-button.svg" />
-                    <div class="logout">Logout</div>
-                </div>
-            </div>
+            
             <div class="account">
                 <div class="auto-update">
                     <div class="toggle" id="toggle1">
@@ -136,12 +121,11 @@
         </div>
         <div class="sidebar2">
             <div class="background2"></div>
-            <div class="adnupay-ver01beta2">AdNUPay ver0.1beta</div>
             <div class="hover2"></div>
             <div class="settings8">
                 <div class="settings9">Settings</div>
                 <div class="rectangle-container">
-                    <div class="group-child5"></div>
+                    <div class="group-child5" sty></div>
                     <div class="group-child6"></div>
                     <div class="group-child7"></div>
                     <div class="group-child8"></div>
@@ -195,7 +179,7 @@
         var icons1 = document.getElementById("icons1");
         if (icons1) {
             icons1.addEventListener("click", function (e) {
-                window.location.href = "./change-account-pin.html";
+                window.location.href = "./account-information.html";
             });
         }
 
@@ -240,6 +224,8 @@
                 window.location.href = "./dashboard.html";
             });
         }
+
+        document.body.style.overflow = 'hidden';
     </script>
 </body>
 </html>

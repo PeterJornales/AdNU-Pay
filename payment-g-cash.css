@@ -46,12 +46,16 @@
   height: 64px;
 }
 .box-icon {
-  top: 0;
+  position: absolute;
+  top: -60px;
   left: 0;
   border-radius: var(--br-11xl);
-  width: 1186px;
-  height: 529px;
+  width: 1186px; /* Initial width */
+  height: 550px; /* Initial height */
+  /* Additional styles */
+  box-sizing: border-box; /* Ensure padding and border are included in width and height */
 }
+
 .form-city-inner {
   font-size: 30px;
   position: absolute;
@@ -59,7 +63,6 @@
   left: calc(50% - 242.25px);
   border-radius: var(--br-8xs);
   border: 1px solid var(--color-darkgray-200);
-  box-sizing: border-box;
   width: 484.5px;
   height: 95.1px;
 }
@@ -88,7 +91,6 @@
   left: calc(50% - 500.7px);
   border-radius: var(--br-8xs);
   border: 1px solid var(--color-darkgray-200);
-  box-sizing: border-box;
   width: 1001.4px;
 }
 .mobile-number {
@@ -168,7 +170,7 @@
 }
 .vector-parent1 {
   position: absolute;
-  top: 455px;
+  top: 410px;
   left: 1015px;
   width: 118.8px;
   height: 40px;

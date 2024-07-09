@@ -451,3 +451,10 @@
   color: var(--color-whitesmoke-100);
   font-family: var(--text-regular-2);
 }
+
+.linebreak {
+  margin-top: -18px;
+  border: none;
+  height: 1px; /* Adjust this value to make the line thinner or thicker */
+  background-color: #646464; /* Set the color of the line */
+}

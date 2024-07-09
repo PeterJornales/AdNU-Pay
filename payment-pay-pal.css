@@ -54,7 +54,7 @@
   border-radius: var(--br-11xl);
   background-color: var(--color-gray-600);
   width: 1179px;
-  height: 593px;
+  height: 485px;
 }
 .form-city-item {
   left: calc(50% - 242.25px);
@@ -62,7 +62,7 @@
   border: 1px solid var(--color-darkgray-200);
   box-sizing: border-box;
   width: 484.5px;
-  height: 95.1px;
+  height: 80px;
   font-size: 30px;
 }
 .phone-number {
@@ -78,10 +78,10 @@
 .form-billingaddress-inner,
 .form-city1 {
   position: absolute;
-  top: 343px;
+  top: 303px;
   left: calc(50% - 516.5px);
   width: 484.5px;
-  height: 95.1px;
+  height: 80px;
   font-size: 30px;
 }
 .form-billingaddress-inner {
@@ -108,10 +108,9 @@
   top: 117.2px;
   left: calc(50% - 516.4px);
   width: 1001.4px;
-  height: 95.1px;
 }
 .form-billingaddress3 {
-  top: 230px;
+  top: 210px;
   left: calc(50% - 516.5px);
 }
 .link-card1 {
@@ -146,7 +145,7 @@
 }
 .vector-container {
   position: absolute;
-  top: 519px;
+  top: 419px;
   left: 1020px;
   width: 118.8px;
   height: 40px;
@@ -163,7 +162,7 @@
 .container-contact1 {
   top: 480px;
   left: 419px;
-  height: 593px;
+  height: 303px;
   font-size: var(--font-size-5xl);
   color: var(--color-darkgray-200);
 }
@@ -221,6 +220,7 @@
   font-family: var(--font-poppins);
 }
 .button-icon1 {
+  cursor: pointer;
   position: absolute;
   top: 49px;
   left: 350px;
@@ -429,3 +429,4 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+

@@ -115,6 +115,31 @@
 
   <script>
 
+var dONEText = document.getElementById("dONEText");
+      if (dONEText) {
+          dONEText.addEventListener("click", function (e) {
+
+              // Deduct the amount from the outstanding balance (examBalance)
+              if (amountPaid > 0) {
+
+                  // Update the values in localStorage with two decimal places
+                  localStorage.setItem("tuition", tuitionBalance.toFixed(2));
+                  localStorage.setItem("exam", examBalance.toFixed(2));
+                  localStorage.setItem("payment", totalPayment.toFixed(2));
+
+                  // Display a message indicating the payment is being processed
+                  alert("Payment is being processed. You will be redirected to the dashboard shortly.");
+
+                  // Delay the redirection to the dashboard by 10-20 seconds
+                  setTimeout(function() {
+                      window.location.href = "./dashboard.html";
+                  }, 300); // 15 seconds delay (15000 milliseconds)
+              } else {
+                  alert("Invalid amount paid.");
+              }
+          });
+      }
+
     // Function to display the student ID in the welcome message
 function displayStudentID() {
     var studentID = localStorage.getItem("studentID");
@@ -139,7 +164,7 @@ document.addEventListener("DOMContentLoaded", displayStudentID);
     var dONEText = document.getElementById("dONEText");
     if (dONEText) {
       dONEText.addEventListener("click", function (e) {
-        window.location.href = "./payment.html";
+        window.location.href = "./dashboard.html";
       });
     }
   

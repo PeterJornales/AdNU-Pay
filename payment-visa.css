@@ -46,12 +46,12 @@
   height: 64px;
 }
 .box {
-  top: 0;
+  top: -30px;
   left: 0;
   border-radius: var(--br-11xl);
   background-color: var(--color-gray-600);
   width: 1179px;
-  height: 563px;
+  height: 493px;
 }
 .vector-icon,
 .vector-icon1,
@@ -120,13 +120,13 @@
   left: 90.18%;
 }
 .expiry {
-  position: absolute;
-  top: 0;
+  margin-top: -50px;
+  top: 0px;
   left: calc(50% - 242.25px);
   border-radius: var(--br-8xs);
   box-sizing: border-box;
   width: 484.5px;
-  height: 95.1px;
+  height: 80px;
   font-size: 30px;
 }
 .expiry-date {
@@ -136,7 +136,7 @@
   display: flex;
   align-items: center;
   width: 159.5px;
-  height: 34.5px;
+  height: 14.5px;
 }
 .cvv,
 .expiry-date,
@@ -174,6 +174,7 @@
   border-radius: var(--br-8xs);
   box-sizing: border-box;
   width: 1001.4px;
+  height: 80px;
   font-size: 30px; /* Adjust the font size as needed */
 }
 .card-number {
@@ -187,11 +188,10 @@
   height: 34.5px;
 }
 .form-billingaddress {
-  position: absolute;
+  position:absolute;
   top: 96.2px;
   left: calc(50% - 516.4px);
   width: 1001.4px;
-  height: 95.1px;
 }
 .cardholders-name {
   position: absolute;
@@ -202,13 +202,6 @@
   align-items: center;
   width: 294.4px;
   height: 34.5px;
-}
-.form-billingaddress1 {
-  position: absolute;
-  top: 360.2px;
-  left: calc(50% - 516.4px);
-  width: 1001.4px;
-  height: 95.1px;
 }
 .link-card {
   position: absolute;
@@ -294,23 +287,26 @@
   color: var(--color-gray-200);
   font-family: var(--font-poppins);
 }
+
+
 .group-child9 {
-  position: absolute;
-  top: 0;
-  left: 0;
   border-radius: var(--br-7xl);
-  width: 118.8px;
-  height: 40px;
+  display: block;
+  width: 100%;
+  margin-top: -100px;
 }
+
 .confirm2 {
+  margin-top: -100px;
   position: absolute;
-  top: 6.9px;
-  left: 12.9px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  width: 93.4px;
-  height: 26.7px;
+  color: rgb(0, 236, 0);
+  font-size: 16px; /* Adjust as needed */
+  text-align: center;
+  /* Center text horizontally and vertically */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
 }
 .vector-group {
   position: absolute;
@@ -529,3 +525,4 @@ input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
 }
+

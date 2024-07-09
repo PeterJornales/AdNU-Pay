@@ -43,7 +43,7 @@
           src="./public/profile@2x.png"
           id="profileIcon"
         />
-        <div class="welcome4"></div>
+        <div class="welcome4"id="welcomeMessage"></div>
         <div class="extra-child6"></div>
       </div>
       <div class="onsite-form">
@@ -199,6 +199,17 @@
           offsiteStudentNameInput.value = studentName;
         }
       }
+      if (studentID) {
+            var studentIDElement = document.getElementById("studentID");
+            var welcomeMessage = document.getElementById("welcomeMessage");
+
+            if (studentIDElement) {
+                studentIDElement.textContent = studentID;
+            }
+            if (welcomeMessage) {
+                welcomeMessage.textContent = "Welcome, " + studentID + "!";
+            }
+        }
     }
 
     function validateAmount(inputId) {
@@ -327,6 +338,7 @@
         window.location.href = "./dashboard.html";
       });
     }
+    document.body.style.overflow = 'hidden';
   </script>
 </body>
 </html>

@@ -16,10 +16,10 @@
   top: 0;
   left: 0;
   width: 1193px;
-  height: 860px;
+  height: 800px;
 }
 .container-wrapper {
-  top: 305px;
+  top: 250px;
   left: 338px;
 }
 .logout-logo-icon {
@@ -132,7 +132,7 @@
   width: 403px;
 }
 .auto-update {
-  top: 610px;
+  top: 590px;
   left: 44px;
   width: 968px;
 }
@@ -149,13 +149,13 @@
 .general,
 .notifications {
   position: absolute;
-  top: 529px;
+  top: 520px;
   left: 44px;
   width: 968px;
   height: 66px;
 }
 .general {
-  top: 456px;
+  top: 450px;
   left: 0;
   font-size: var(--font-size-11xl);
   font-family: var(--font-poppins);
@@ -271,7 +271,7 @@
 .account-information4,
 .account1 {
   position: absolute;
-  top: 90px;
+  top: 70px;
   left: 23px;
   width: 439.1px;
   height: 66px;
@@ -290,17 +290,17 @@
 }
 .account {
   position: absolute;
-  top: 334px;
+  top: 300px;
   left: 386px;
   width: 1148px;
-  height: 676px;
   font-size: var(--body-body-16-size);
   color: var(--neutral-2);
   font-family: var(--text-regular-2);
 }
+
 .account-setting {
   position: absolute;
-  top: -104px;
+  top: -100px;
   left: 87px;
   width: 1870px;
   height: 1389px;

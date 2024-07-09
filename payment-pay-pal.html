@@ -49,7 +49,6 @@
       <div class="container-contact1">
         <div class="box2"></div>
         <div class="form-city1">
-          <div class="form-city-item"></div>
           <div class="form-city-item">
             <input
               type="number"
@@ -115,11 +114,10 @@
         </div>
         <div class="card-type1">Card Type</div>
       </div>
-      <img class="button-icon1" alt="" src="./public/button@2x.png" />
+      <img id="button-icon1" class="button-icon1" alt="" src="./public/button@2x.png" />
 
       <div class="sidebar4">
         <div class="background4"></div>
-        <div class="adnupay-ver01beta4">AdNUPay ver0.1beta</div>
         <div class="hover4"></div>
         <div class="settings14" id="settingsContainer">
           <div class="settings15">Settings</div>
@@ -255,6 +253,30 @@ document.addEventListener('wheel', function(event) {
           window.location.href = "./dashboard.html";
         });
       }
+
+    // Wait for the DOM content to load
+document.addEventListener("DOMContentLoaded", function() {
+  // Get the element by its id
+  var buttonIcon = document.getElementById("button-icon1");
+
+  // Check if the element exists
+  if (buttonIcon) {
+    // Add a click event listener
+    buttonIcon.addEventListener("click", function(e) {
+      // Redirect to the desired location
+      window.location.href = "./payment.html";
+    });
+
+    buttonIcon.addEventListener("mouseout", function() {
+      // Example: Reset the border color when not hovering
+      buttonIcon.style.border = "none";
+    });
+  }
+});
+
+
+
+      document.body.style.overflow = 'hidden';
     </script>
   </body>
 </html>

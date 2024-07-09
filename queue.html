@@ -103,6 +103,10 @@
                     examBalance = 0;
                   }
 
+                  if(amountPaid <= examBalance) {
+                    examBalance -= amountPaid;
+                  }
+
                   // Deduct the amount from the total balance (tuitionBalance)
                   if (amountPaid <= tuitionBalance) {
                       tuitionBalance -= amountPaid;
@@ -125,7 +129,7 @@
                   // Delay the redirection to the dashboard by 10-20 seconds
                   setTimeout(function() {
                       window.location.href = "./dashboard.html";
-                  }, 15000); // 15 seconds delay (15000 milliseconds)
+                  }, 300); // 15 seconds delay (15000 milliseconds)
               } else {
                   alert("Invalid amount paid.");
               }
