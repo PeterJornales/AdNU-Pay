@@ -74,20 +74,6 @@
                     <div class="container-item"></div>
                 </div>
             </div>
-
-            <div class="icon-log-out">
-          <img
-            class="logout-logo-icon"
-            alt=""
-            src="./public/logoutlogo.svg"
-            id="logoutLogo"
-          />
-
-          <div class="vector-parent" id="groupContainer">
-            <img class="rectangle-icon" alt="" src="./public/back-button.svg" />
-
-            <div class="logout">Logout</div>
-          </div>
             
             <div class="account">
                 <div class="auto-update">
@@ -161,13 +147,6 @@
         </div>
     </div>
     <script>
-
-        var logoutLogo = document.getElementById("logoutLogo");
-      if (logoutLogo) {
-        logoutLogo.addEventListener("click", function (e) {
-          window.location.href = "./index.html";
-        });
-      }
         function displayStudentID() {
             var studentID = localStorage.getItem("studentID");
             if (studentID) {
